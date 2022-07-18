@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "electron": "^19.0.8"
+  },
+  "name": "cadence",
+  "description": "*by Azistara and Cleveland Plonsey*",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Azistara/Cadence.git"
+  },
+  "author": "AZDev, LLC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Azistara/Cadence/issues"
+  },
+  "homepage": "https://github.com/Azistara/Cadence#readme"
+}
