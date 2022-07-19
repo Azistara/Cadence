@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="./index_styles.css">
   </head>
   <body>
-    <h1>Home</h1>
+    
+   
+
     <main>
         
         <nav id="main-nav">
@@ -23,19 +25,71 @@
             <button class="nav-button">home</button>
             <button class="nav-button">music</button>
             <button class="nav-button">profile</button>
-            <button class="nav-button">now playing</button>
         </nav>
-        <section>
-            <h2>Let's Play a Song!</h2>
+        <section id="main-content">
+            <header>
+                <p>Cadence X</p>
+                 <form action="">
+                     <input id="search-bar" type="text" placeholder="Search...">
+                     <button type="submit">Go</button>
+                 </form>
+                 <h1>Home</h1>
+            <h2>Good evening, Jay</h2>
+            <h3>Relax to some tunes</h3>
+           
+             </header>
+             <div id="recently-played-banner">
+                <p>Recently played </p>
+                <button id="show-more-button">Show More</button>
+            </div>
             <div id="album-gallery">
-                <img src="./resources/album3.jpg" alt="">
-                <img src="./resources/album2.jpg" alt="">
-                <img src="./resources/album5.jpg" alt="">
-                <img src="./" alt="">
-                <img src="./" alt="">
-                <img src="./" alt="">
+               
+                
+               
+                <div class="row">
+                    <figure>
+                        <img src="./resources/album3.jpg" alt="">
+                        <figcaption>Song 1</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./resources/album2.jpg" alt="">
+                        <figcaption>Song 2</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./resources/album5.jpg" alt="">
+                        <figcaption>Song 3</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./resources/album6.jpg" alt="">
+                        <figcaption>Song 4</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section id="queue-bar">
+            <div id="queue-header">
+                <p>Queue</p>
+                <button class="queue-control-button" id="clear-queue">Clear</button>
+                <button class="queue-control-button" id="add-to-queue">+</button>
+            </div>
+            <div id="queue-list">
+                <div class="queue-item"><p>Summer 2022</p>  <p>5:43</p></div>
+                <div class="queue-item"><p>The Poop Song</p>  <p>7:21</p></div>
+                <div class="queue-item"><p>Windows XP Startup</p>  <p>3:01</p></div>
+                <div class="queue-item"><p>My Burden Is Light</p>   <p>4:21</p></div>
             </div>
         </section>
     </main>
+    <hr>
+    <div></div>
+    <section id="control-panel">
+        <button class="control-button">Stop</button>
+        <button class="control-button">Shuffle</button>
+        <button class="control-button">Prev</button>
+        <button class="control-button">Play</button>
+        <button class="control-button">Forward</button>
+        <button class="control-button">Repeat</button>
+        <button class="control-button">Volume</button>
+    </section>
   </body>
 </html>
