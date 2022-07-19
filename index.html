@@ -11,10 +11,31 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>Hello from Electron renderer!</title>
+    <title>Cadence Home</title>
+    <link rel="stylesheet" href="./index_styles.css">
   </head>
   <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
+    <h1>Home</h1>
+    <main>
+        
+        <nav id="main-nav">
+            <button id="menu" class="nav-button">menu</button>
+            <button class="nav-button">home</button>
+            <button class="nav-button">music</button>
+            <button class="nav-button">profile</button>
+            <button class="nav-button">now playing</button>
+        </nav>
+        <section>
+            <h2>Let's Play a Song!</h2>
+            <div id="album-gallery">
+                <img src="./resources/album3.jpg" alt="">
+                <img src="./resources/album2.jpg" alt="">
+                <img src="./resources/album5.jpg" alt="">
+                <img src="./" alt="">
+                <img src="./" alt="">
+                <img src="./" alt="">
+            </div>
+        </section>
+    </main>
   </body>
 </html>
