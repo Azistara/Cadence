@@ -10,20 +10,37 @@ body{
     z-index: 0px;
 }
 h1, h2, h3 {
-    margin-left: 20%;
+    margin-left: 5%;
     color: white;
+    z-index: 30px;
 }
 h2{
-    margin-left: 13%;
     font-size: 40px;
 }
 header{
     width: 100%;
     height: fit-content;
-    background-image: url('./resources/busy-market.jpg');
+    background-image: url('./resources/home-backdrop.webp');
     background-size: cover;
     background-repeat: no-repeat;
+    filter: brightness(0.7);
 
+}
+
+#search-bar-container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#cadence-p{
+    margin-left: 10px;
+    filter: brightness(1);
+}
+
+.search-button{
+    margin-right: 10px;
 }
 
 #main-content{
