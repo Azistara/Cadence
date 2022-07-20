@@ -9,6 +9,14 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     z-index: 0px;
 }
+
+#the-blur{
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(40px); 
+    height: inherit;
+      width: inherit;
+      z-index: 20px;
+}
 h1, h2, h3 {
     margin-left: 5%;
     color: white;
@@ -63,7 +71,7 @@ header{
     position: absolute;
     right: 0;
     top: 0;
-    background-color: gray;
+    background-color: rgb(67, 64, 64);
     color:white;
     height: 90%;
     width: 15%;
@@ -84,6 +92,24 @@ header{
     color: white;
     border: none;
 }
+
+#current-queue-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#current-queue-item > img{
+    height: 50%;
+    width: 50%;
+}
+
+#current-queue-item >div > p{
+    margin-left: 6px;
+    color:white;
+    font-size: 10px;
+}
+
 .queue-item {
     background-color: grey;
     display: flex;
