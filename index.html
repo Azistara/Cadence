@@ -86,17 +86,25 @@
             </div>
         </section>
     </main>
-    <div ></div>
-    <section id="control-panel">
-        <button id="stop-button" class="control-button"></button>
-        <button id="shuffle-button" class="control-button"></button>
-        <button id="prev-button" class="control-button"></button>
-        <button id="play-button" class="control-button"></button>
-        <button id="forward-button" class="control-button"></button>
-        <button id="repeat-button" class="control-button"></button>
-        <button id="volume-button" class="control-button"></button>
-    </section>
-
+    <div id="control-panel-wrapper">
+        <div id="now-playing-container">
+            <img id="now-playing-img" src="./resources/album2.jpg" alt="">
+            <div id="now-playing-info">
+                <p id="now-playing-timestamp">0:58</p>
+                <h3 id="now-playing-title">Energize and Resize</h3>
+            </div>
+        </div>
+        <section id="control-panel">
+            
+            <button id="stop-button" class="control-button"></button>
+            <button id="shuffle-button" class="control-button"></button>
+            <button id="prev-button" class="control-button"></button>
+            <button id="play-button" class="control-button"></button>
+            <button id="forward-button" class="control-button"></button>
+            <button id="repeat-button" class="control-button"></button>
+            <button id="volume-button" class="control-button"></button>
+        </section>
+    </div>
 
     <script src="./mp3_player.js" defer></script>
   </body>
