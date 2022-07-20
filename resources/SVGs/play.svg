@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <g id="Group_71" data-name="Group 71" transform="translate(-773 -61)">
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(773 61)" fill="none" stroke="#707070" stroke-width="4">
+      <circle cx="40" cy="40" r="40" stroke="none"/>
+      <circle cx="40" cy="40" r="38" fill="none"/>
+    </g>
+    <path id="Icon_material-play-arrow" data-name="Icon material-play-arrow" d="M12,7.5v35L42,25Z" transform="translate(789.5 76.5)" fill="#fff"/>
+  </g>
+</svg>

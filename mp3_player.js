@@ -17,6 +17,15 @@ let pauseMp3 = (event) =>{
   event.target.addEventListener('click', playMp3);
   event.target.innerText = 'Play';
 }
- let playButton =  document.getElementById("play-button");
- playButton.addEventListener('click', playMp3);
+
+let playButton =  document.getElementById("play-button");
+playButton.addEventListener('click', playMp3);
+
+let searchBar = document.getElementById('search-bar');
+let displaySearchBar = () =>{
+  searchBar.style.visibility = 'visible';
+};
+
+document.getElementsByClassName('search-button')[0].addEventListener('click', displaySearchBar);
+
  
