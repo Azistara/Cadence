@@ -23,7 +23,6 @@ header{
     background-image: url('./resources/home-backdrop.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    filter: brightness(0.7);
 
 }
 
@@ -34,6 +33,16 @@ header{
     justify-content: space-between;
 }
 
+.search-button{
+    background-image: url("./resources/magnifying-glass-solid.svg");
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border:none;
+}
+.hidden{
+    visibility: hidden;
+}
 #cadence-p{
     margin-left: 10px;
     filter: brightness(1);
@@ -41,6 +50,7 @@ header{
 
 .search-button{
     margin-right: 10px;
+
 }
 
 #main-content{
@@ -78,6 +88,11 @@ header{
     flex-direction: row;
     justify-content: space-around;
 }
+
+.queue-item:nth-child(even) {
+    background-color: rgb(67, 64, 64);
+}
+
 main{
     z-index: 10px;
     display:flex;
@@ -105,18 +120,43 @@ main{
 }
 
 #main-nav button{
-
+    height: 20px;
+    width: 20px;
+    color: white;
+    border: none;
+    background-color: grey;
 }
 
+#back-button{
+    background-image: url("./resources/arrow-left-solid.svg");
+}
+
+#home-button{
+    background-image: url("./resources/house-solid.svg");
+}
+
+#music-button{
+    background-image: url("./resources/music-solid.svg");
+}
+
+#profile-button{
+    background-image: url("./resources/user-solid.svg");
+}
+#menu-button{
+    background-image: url("./resources/bars-solid.svg");
+}
 #recently-played-banner{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 #show-more-button{
     background-color:#5801b0;
     color:white;
+    height:fit-content;
+    width: fit-content;
 }
 
 #album-gallery{
@@ -159,7 +199,7 @@ figcaption{
     height: 17%;
     justify-content: space-evenly;
     align-items: center;
-    background-image: linear-gradient(brown, orange);
+    background-image: url(./resources/grey_acrylic_background.jpg);
 }
 
 .control-button{
@@ -167,6 +207,4 @@ figcaption{
     width: fit-content;
     background-color: gray;
     color: white;
-    border-radius: 100%;
-    font-size: 30px;
 }
