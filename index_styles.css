@@ -280,32 +280,47 @@ figcaption{
 }
 
 #stop-button{
-    background-image: url("./resources/svgs/Icon\ metro-stop.svg");
+    background-image: url("./resources/svg/Icon\ metro-stop.svg");
 }
 
 #shuffle-button{
-    background-image: url("./resources/svgs/Icon\ feather-shuffle.svg");
+    background-image: url("./resources/svg/Icon\ feather-shuffle.svg");
 }
 
 #prev-button{
-    background-image: url("./resources/svgs/Icon\ material-skip-previous.svg");
+    background-image: url("./resources/svg/Icon\ material-skip-previous.svg");
 }
 
 #play-button{
-    background-image: url("./resources/svgs/play.svg");
+    background-image: url("./resources/svg/play.svg");
     height: 60px;
     width: 60px;
 }
 
 #forward-button{
-    background-image: url("./resources/svgs/Icon\ material-skip-next.svg");
+    background-image: url("./resources/svg/Icon\ material-skip-next.svg");
 }
 
 #repeat-button{
-    background-image: url("./resources/svgs/Icon\ feather-repeat.svg");
+    background-image: url("./resources/svg/Icon\ feather-repeat.svg");
 }
 
 #volume-button{
-    background-image: url("./resources/svgs/Icon\ material-volume-up.svg");
+    background-image: url("./resources/svg/Icon\ material-volume-up.svg");
 }
-#
+
+#toggle-queue-button{
+    background-image: url("");
+}
+
+#full-screen-button{
+    background-image: url();
+}
+
+#equalizer-button{
+    background-image: url();
+}
+
+#now-playing-button{
+    background-image: url();
+}
