@@ -1,6 +1,9 @@
 //play mp3s
 //HTMLMediaElement
 var audio = new Audio('./resources/mp3s/test.mp3');
+let playButton =  document.getElementById("play-button");
+let stopButton = document.getElementById('stop-button');
+
 
 let playMp3 = (event) => {
    //play the audio
@@ -10,22 +13,33 @@ let playMp3 = (event) => {
   event.target.addEventListener('click', pauseMp3);
   event.target.innerText = 'Pause';
   };
-let pauseMp3 = (event) =>{
+let pauseMp3 = () =>{
   audio.pause();
   //change the audio button to a play button
-  event.target.removeEventListener('click', pauseMp3);
-  event.target.addEventListener('click', playMp3);
-  event.target.innerText = 'Play';
+  playButton.removeEventListener('click', pauseMp3);
+  playButton.addEventListener('click', playMp3);
+  playButton.innerText = 'Play';
+};
+
+
+playButton.addEventListener('click', playMp3);
+
+let stopMp3 = (event) =>{
+  pauseMp3(); //pause the audio 
+  audio.currentTime = 0; //reset to beginning of the song
 }
 
-let playButton =  document.getElementById("play-button");
-playButton.addEventListener('click', playMp3);
+
+stopButton.addEventListener('click', stopMp3);
+
+
 
 let searchBar = document.getElementById('search-bar');
 let displaySearchBar = () =>{
   searchBar.style.visibility = 'visible';
 };
 
-document.getElementsByClassName('search-button')[0].addEventListener('click', displaySearchBar);
+let searchButton = document.getElementsByClassName('search-button')[0]; 
+searchButton.addEventListener('click', displaySearchBar);
 
  
