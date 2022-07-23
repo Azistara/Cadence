@@ -54,19 +54,19 @@
                
                 <div class="row">
                     <figure>
-                        <img src="./resources/album3.jpg" alt="">
+                        <img src="./resources/images/album3.jpg" alt="">
                         <figcaption>Song 1</figcaption>
                     </figure>
                     <figure>
-                        <img src="./resources/album2.jpg" alt="">
+                        <img src="./resources/images/album2.jpg" alt="">
                         <figcaption>Song 2</figcaption>
                     </figure>
                     <figure>
-                        <img src="./resources/album5.jpg" alt="">
+                        <img src="./resources/images/album5.jpg" alt="">
                         <figcaption>Song 3</figcaption>
                     </figure>
                     <figure>
-                        <img src="./resources/album6.jpg" alt="">
+                        <img src="./resources/images/album6.jpg" alt="">
                         <figcaption>Song 4</figcaption>
                     </figure>
                 </div>
@@ -80,7 +80,7 @@
             </div>
             <div id="queue-list">
                 <div id="current-queue-item">
-                    <img src="./resources/album3.jpg" alt="">
+                    <img src="./resources/images/album3.jpg" alt="">
                     <div>
                         <h4>Enter the Void</h4>
                         <p>IntelliJ</p>
@@ -103,13 +103,13 @@
     </main>
     <div id="control-panel-wrapper">
         <div id="now-playing-container">
-            <img id="now-playing-img" src="./resources/album2.jpg" alt="">
+            <img id="now-playing-img" src="./resources/images/album2.jpg" alt="">
             <div id="now-playing-info">
                 <p id="now-playing-timestamp">0:58</p>
                 <h3 id="now-playing-title">Energize and Resize</h3>
             </div>
         </div>
-        <footer>
+        
         <section id="control-panel">
             
             <button id="stop-button" class="control-button"></button>
@@ -121,12 +121,11 @@
             <button id="volume-button" class="control-button"></button>
         </section>
         <section id="supplementary-controls">
-            <button id="toggle-queue-button"></button>
-            <button id="full-screen-button"></button>
-            <button id="equalizer-button"></button>
-            <button id="now-playing-button"></button>
+            <button class="supplementary-button control-button" id="toggle-queue-button"></button>
+            <button class="supplementary-button control-button" id="full-screen-button"></button>
+            <button class="supplementary-button control-button" id="equalizer-button"></button>
+            <button class="supplementary-button control-button" id="now-playing-button"></button>
         </section>
-    </footer>
     </div>
 
     <script src="./mp3_player.js" defer></script>

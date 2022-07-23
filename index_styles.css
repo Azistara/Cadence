@@ -1,7 +1,7 @@
 body{
     padding:0;
     margin:0;
-    background-image: url(./resources/grey_acrylic_background.jpg);
+    background-image: url(./resources/images/grey_acrylic_background.jpg);
     opacity: .9;
     height: 95vh;
     width: 100vw;
@@ -34,7 +34,7 @@ h2{
 header{
     width: 100%;
     height: fit-content;
-    background-image: url('./resources/home-backdrop.webp');
+    background-image: url('./resources/images/home-backdrop.webp');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -160,22 +160,22 @@ main{
 }
 
 #back-button{
-    background-image: url("./resources/arrow-left-solid.svg");
+    background-image: url("./resources/svg/nav-fa/arrow-left-solid.svg");
 }
 
 #home-button{
-    background-image: url("./resources/house-solid.svg");
+    background-image: url("./resources/svg/nav-fa/house-solid.svg");
 }
 
 #music-button{
-    background-image: url("./resources/music-solid.svg");
+    background-image: url("./resources/svg/nav-fa/music-solid.svg");
 }
 
 #profile-button{
-    background-image: url("./resources/user-solid.svg");
+    background-image: url("./resources/svg/nav-fa/user-solid.svg");
 }
 #menu-button{
-    background-image: url("./resources/bars-solid.svg");
+    background-image: url("./resources/svg/nav-fa/bars-solid.svg");
 }
 #recently-played-banner{
     display: flex;
@@ -247,6 +247,21 @@ figcaption{
   
 }
 
+
+#supplementary-controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:center;
+    width: 10%;
+    height: 17%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+
 #control-panel-wrapper{
 
     display: flex;
@@ -254,6 +269,8 @@ figcaption{
     justify-content: space-between;
     width: 100%;
     height: fit-content;
+    align-items: center;
+  
 }
 
 #control-panel{
@@ -273,54 +290,59 @@ figcaption{
 .control-button{
     height: 30px;
     width: 30px;
-    background-color:  rgb(95, 95, 95);;
+    background-color:  rgb(95, 95, 95);
     background-repeat: no-repeat;
     background-size: cover;
     border:none;
 }
 
+.supplementary-button{
+    height: 20px;
+    width: 20px;
+}
+
 #stop-button{
-    background-image: url("./resources/svg/Icon\ metro-stop.svg");
+    background-image: url("./resources/svg/media/Icon\ metro-stop.svg");
 }
 
 #shuffle-button{
-    background-image: url("./resources/svg/Icon\ feather-shuffle.svg");
+    background-image: url("./resources/svg/media/Icon\ feather-shuffle.svg");
 }
 
 #prev-button{
-    background-image: url("./resources/svg/Icon\ material-skip-previous.svg");
+    background-image: url("./resources/svg/media/Icon\ material-skip-previous.svg");
 }
 
 #play-button{
-    background-image: url("./resources/svg/play.svg");
+    background-image: url("./resources/svg/media/play.svg");
     height: 60px;
     width: 60px;
 }
 
 #forward-button{
-    background-image: url("./resources/svg/Icon\ material-skip-next.svg");
+    background-image: url("./resources/svg/media/Icon\ material-skip-next.svg");
 }
 
 #repeat-button{
-    background-image: url("./resources/svg/Icon\ feather-repeat.svg");
+    background-image: url("./resources/svg/media/Icon\ feather-repeat.svg");
 }
 
 #volume-button{
-    background-image: url("./resources/svg/Icon\ material-volume-up.svg");
+    background-image: url("./resources/svg/media/Icon\ material-volume-up.svg");
 }
 
 #toggle-queue-button{
-    background-image: url("");
+    background-image: url("./resources/svg/nav/Icon\ material-queue-music.svg");
 }
 
 #full-screen-button{
-    background-image: url();
+    background-image: url("./resources/svg/media/Icon\ material-fullscreen.svg");
 }
 
 #equalizer-button{
-    background-image: url();
+    background-image: url("./resources/svg/media/Icon\ material-equalizer.svg");
 }
 
 #now-playing-button{
-    background-image: url();
+    background-image: url("/resources/svg/media/Frame.svg");
 }

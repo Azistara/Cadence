@@ -1,8 +1,9 @@
 //entry point to the app
-
-const { app, BrowserWindow } = require('electron')
+const {BrowserWindow} = require("electron-acrylic-window");
+const { app, BrowserWindow } = require('electron');
 const createWindow = () => {
   const win = new BrowserWindow({
+    frame: false;
     width: 800,
     height: 600,
   })
