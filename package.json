@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "electron": "^19.0.8"
+    "electron": "^19.0.8",
+    "electron-acrylic-window": "^0.5.11"
   },
   "name": "cadence",
   "description": "*by Azistara and Cleveland Plonsey*",
