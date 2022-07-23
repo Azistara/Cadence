@@ -1,14 +1,29 @@
 //entry point to the app
 const {BrowserWindow} = require("electron-acrylic-window");
+const { setVibrancy } = require('electron-acrylic-window');
 const { app } = require('electron');
+
+
+//create the wondow acrylic options object
+op = {
+  theme: 'appearance-based',
+  effect:  'acrylic',
+  useCustomWindowRefreshMethod: true,
+  maximumRefreshRate: 60,
+  disableOnBlur: true
+};
+
+
+
 const createWindow = () => {
   const win = new BrowserWindow({
-    frame: false,
-    vibrancy: [options], // See below
-    width: 800,
-    height: 600,
+    frame: true,
+  
+    width: 1000,
+    height: 1000,
   })
-  win.loadFile('index.html')
+  setVibrancy(win, op); 
+  win.loadFile('index.html');
 }
 app.whenReady().then(() => {
   createWindow()
