@@ -1,7 +1,9 @@
 //play mp3s
 
 //HTMLMediaElement
-var audio = new Audio('./resources/mp3s/test.mp3');
+
+let songQueue = ["./resources/mp3s/Gmatters.m4a", "./resources/mp3s/MindBlown.m4a", "./resources/mp3s/Ouija.m4a", './resources/mp3s/test.mp3' ];
+var audio = new Audio(songQueue[0]);
 let playButton =  document.getElementById("play-button");
 let stopButton = document.getElementById('stop-button');
 let volumeButton = document.getElementById('volume-button');
@@ -29,12 +31,18 @@ let pauseMp3 = () =>{
 playButton.addEventListener('click', playMp3);
 
 
-let stopMp3 = (event) =>{
+let stopMp3 = () =>{
   pauseMp3(); //pause the audio 
   audio.currentTime = 0; //reset to beginning of the song
 }
 stopButton.addEventListener('click', stopMp3);
 
+let playNextSong = () => {
+  songQueue.push(songQueue.shift()); //put finished song at end of queue
+  audio = new Audio(songQueue[0]); //set the current song to the song at the front of the queue
+  audio.play(); //start playing the current song
+}
+audio.addEventListener('ended', playNextSong);
 
 let toggleVolumeSlider = () =>{ //display  slider above the volume button
   if(volumeSlider.style.display === 'none'){
