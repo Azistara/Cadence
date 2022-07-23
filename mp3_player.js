@@ -3,7 +3,10 @@
 var audio = new Audio('./resources/mp3s/test.mp3');
 let playButton =  document.getElementById("play-button");
 let stopButton = document.getElementById('stop-button');
+let volumeSlider = document.getElementById('volume-slider');
 
+let searchButton = document.getElementsByClassName('search-button')[0]; 
+let searchBar = document.getElementById('search-bar');
 
 let playMp3 = (event) => {
    //play the audio
@@ -29,17 +32,20 @@ let stopMp3 = (event) =>{
   audio.currentTime = 0; //reset to beginning of the song
 }
 
-
 stopButton.addEventListener('click', stopMp3);
 
+let toggleVolumeSlider = () =>{ //display  slider above the volume button
+  
+}
 
 
-let searchBar = document.getElementById('search-bar');
 let displaySearchBar = () =>{
+  console.log("hello from search bar!");
   searchBar.style.visibility = 'visible';
+ 
 };
 
-let searchButton = document.getElementsByClassName('search-button')[0]; 
+
 searchButton.addEventListener('click', displaySearchBar);
 
  

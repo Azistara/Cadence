@@ -47,10 +47,10 @@ header{
     justify-content: space-between;
 }
 #search-bar{
-    display:none;
+    visibility: hidden;
 }
 .search-button{
-    background-image: url("./resources/magnifying-glass-solid.svg");
+    background-image: url("./resources/svg/titlebar/magnifying-glass-solid.svg");
     height: 20px;
     width: 20px;
     background-color: black;
@@ -344,5 +344,5 @@ figcaption{
 }
 
 #now-playing-button{
-    background-image: url("/resources/svg/media/Frame.svg");
+    background-image: url("./resources/svg/media/frame.svg");
 }
