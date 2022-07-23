@@ -47,8 +47,11 @@ let toggleVolumeSlider = () =>{ //display  slider above the volume button
 }
 volumeButton.addEventListener('click', toggleVolumeSlider);
 
+volumeSlider.oninput = function() {audio.volume =  (volumeSlider.value / 100); };
+
+
+
 let displaySearchBar = () =>{
-  console.log("hello from search bar!");
   searchBar.style.visibility = 'visible';
  
 };
