@@ -7,8 +7,14 @@ body{
     width: 100vw;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    z-index: 0px;
+    overflow: hidden;
 }
+
+button:active{
+    background-color: white;
+    opacity: .5;
+}
+
 
 #the-blur{
     background: rgba(255, 255, 255, 0.2); 
@@ -49,6 +55,8 @@ header{
     width: 20px;
     background-color: black;
     border:none;
+    margin-right: 10px;
+
 }
 .hidden{
     visibility: hidden;
@@ -58,10 +66,7 @@ header{
     filter: brightness(1);
 }
 
-.search-button{
-    margin-right: 10px;
 
-}
 
 #main-content{
     width: auto;
@@ -132,10 +137,10 @@ main{
     position: absolute;
     left: 0;
     top:0;
-    background-color: gray;
+    background-color:  rgb(67, 64, 64);
     color:white;
     height: 90%;
-    width: 10%;
+    width: 3%;
     border: none;
 }
 #main-nav{
@@ -151,7 +156,7 @@ main{
     width: 20px;
     color: white;
     border: none;
-    background-color: grey;
+    background-color:  rgb(67, 64, 64);
 }
 
 #back-button{
@@ -275,31 +280,32 @@ figcaption{
 }
 
 #stop-button{
-    background-image: url("./resources/SVGs/Icon\ metro-stop.svg");
+    background-image: url("./resources/svgs/Icon\ metro-stop.svg");
 }
 
 #shuffle-button{
-    background-image: url("./resources/SVGs/Icon\ feather-shuffle.svg");
+    background-image: url("./resources/svgs/Icon\ feather-shuffle.svg");
 }
 
 #prev-button{
-    background-image: url("./resources/SVGs/Icon\ material-skip-previous.svg");
+    background-image: url("./resources/svgs/Icon\ material-skip-previous.svg");
 }
 
 #play-button{
-    background-image: url("./resources/SVGs/play.svg");
+    background-image: url("./resources/svgs/play.svg");
     height: 60px;
     width: 60px;
 }
 
 #forward-button{
-    background-image: url("./resources/SVGs/Icon\ material-skip-next.svg");
+    background-image: url("./resources/svgs/Icon\ material-skip-next.svg");
 }
 
 #repeat-button{
-    background-image: url("./resources/SVGs/Icon\ feather-repeat.svg");
+    background-image: url("./resources/svgs/Icon\ feather-repeat.svg");
 }
 
 #volume-button{
-    background-image: url("./resources/SVGs/Icon\ material-volume-up.svg");
+    background-image: url("./resources/svgs/Icon\ material-volume-up.svg");
 }
+#
