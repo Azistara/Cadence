@@ -4,19 +4,26 @@
 
 let songQueue = ["./resources/mp3s/Gmatters.m4a", "./resources/mp3s/MindBlown.m4a", "./resources/mp3s/Ouija.m4a", './resources/mp3s/test.mp3' ];
 var audio = new Audio(songQueue[0]);
-let playButton =  document.getElementById("play-button");
-let stopButton = document.getElementById('stop-button');
-let volumeButton = document.getElementById('volume-button');
-let volumeSlider = document.getElementById('volume-slider');
-let forwardButton = document.getElementById("forward-button");
-let prevButton = document.getElementById('prev-button');
-let shuffleButton = document.getElementById('shuffle-button');
-let uiQueue = document.getElementById('queue-list');
+let playButton    =    document.getElementById("play-button");
+let pauseButton   =    document.getElementById("pause-button");
+let stopButton    =    document.getElementById('stop-button');
+let volumeButton  =    document.getElementById('volume-button');
+let volumeSlider  =    document.getElementById('volume-slider');
+let forwardButton =    document.getElementById("forward-button");
+let prevButton    =    document.getElementById('prev-button');
+let shuffleButton =    document.getElementById('shuffle-button');
+let uiQueue       =    document.getElementById('queue-list');
 volumeSlider.style.display = 'none';
 
+<<<<<<< HEAD
 let searchButton = document.getElementsByClassName('search-button')[0]; 
 let searchBar = document.getElementById('search-bar');
 let fullScreenButton = document.getElementById('full-screen-button');
+=======
+let searchButton  =    document.getElementsByClassName('search-button')[0]; 
+let searchBar     =    document.getElementById('search-bar');
+
+>>>>>>> f3b258a350e3a0380c1b4750c489fda171ffe018
 
 //START CONTROL PANEL BUTTONS
 
@@ -26,14 +33,14 @@ let playMp3 = () => {
   //change the audio button to a pause button
   playButton.removeEventListener('click', playMp3);
   playButton.addEventListener('click', pauseMp3);
-  playButton.innerText = 'Pause';
+  playButton.style.backgroundImage = "url('./resources/svg/media/az-pause.svg')";
   };
 let pauseMp3 = () =>{
   audio.pause();
   //change the audio button to a play button
   playButton.removeEventListener('click', pauseMp3);
   playButton.addEventListener('click', playMp3);
-  playButton.innerText = 'Play';
+  playButton.style.backgroundImage = "url('./resources/svg/media/az-play.svg')";
 };
 playButton.addEventListener('click', playMp3);
 

@@ -329,9 +329,9 @@ figcaption{
 }
 
 #play-button{
-    background-image: url("./resources/svg/media/play.svg");
+    background-image: url("./resources/svg/media/az-play.svg");
     height: 60px;
-    width: 60px;
+    width:  60px;
 }
 
 #forward-button{
