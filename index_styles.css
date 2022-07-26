@@ -44,6 +44,10 @@ header{
 
 }
 
+#relax-h3{
+    padding-bottom: 30px;
+}
+
 #search-bar-container{
     align-items: center;
     display: flex;
@@ -89,6 +93,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: first baseline;
+    overflow-y: hidden;
 }
 
 #queue-header{
@@ -259,10 +264,10 @@ figcaption{
     justify-content: space-evenly;
     align-items:center;
     width: 10%;
-    height: 17%;
+    height: 10%;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 1%;
 }
 
 

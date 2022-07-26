@@ -6,7 +6,7 @@ const { app } = require('electron');
 
 //create the wondow acrylic options object
 op = {
-  theme: '#10f00055', //change back to greyish 
+  theme: '#43171455', //change back to greyish 
   effect:  'acrylic',
   useCustomWindowRefreshMethod: true,
   maximumRefreshRate: 60,
