@@ -15,19 +15,19 @@ Media player built with Electron
 ## Important Features
 - [X] Basic Music Controls
 - [X] Volume controls
-- [ ] Repeat, skip previous, skip next
+- [X] Repeat, skip previous, skip next
 - [ ] Open and play files
 - [ ] Read file metadata
-- [ ] Queuing tracks
+- [X] Queuing tracks
 - [ ] Music library
 - [ ] Search
-- [ ] Shuffle
+- [X] Shuffle
 - [ ] Store User settings (Using Session storage)
 - [ ] Edit and update music files
 - [ ] Title Bar
 
 ## Other Features
-- [ ] Fullscreen
+- [X] Fullscreen
 - [ ] Integration with OS Media controls (using play/pause, next/back keyboard keys)
 - [ ] Now playing view (Musixmatch lyrics and/or audio visualizer in consideration)
 - [ ] Equalizer
@@ -36,7 +36,6 @@ Media player built with Electron
 - [ ] Light/Dark Mode
 
 # Packages Used
-*to be fixed later*
 - Electron
 - Electron-Acrylic-Window
 
