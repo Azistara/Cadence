@@ -16,7 +16,7 @@ volumeSlider.style.display = 'none';
 
 let searchButton = document.getElementsByClassName('search-button')[0]; 
 let searchBar = document.getElementById('search-bar');
-
+let fullScreenButton = document.getElementById('full-screen-button');
 
 //START CONTROL PANEL BUTTONS
 
@@ -159,8 +159,17 @@ let displaySearchBar = () =>{
   }
  
 };
-
-
 searchButton.addEventListener('click', displaySearchBar);
 
+let enterFullScreen = () =>{  //from: https://www.w3schools.com/howto/howto_js_fullscreen.asp
+  let elem = document.documentElement;
+if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+} else if (elem.webkitRequestFullscreen) { /* Safari */
+  elem.webkitRequestFullscreen();
+} else if (elem.msRequestFullscreen) { /* IE11 */
+  elem.msRequestFullscreen();
+}
+};
+fullScreenButton.addEventListener('click', enterFullScreen);
  
