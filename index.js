@@ -24,6 +24,7 @@ const createWindow = () => {
   })
   setVibrancy(win, op); 
   win.loadFile('index.html');
+  win.removeMenu();
 }
 app.whenReady().then(() => {
   createWindow()

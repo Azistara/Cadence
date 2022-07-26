@@ -186,6 +186,7 @@ main{
 #profile-button{
     background-image: url("./resources/svg/nav-fa/user-solid.svg");
 }
+
 #menu-button{
     background-image: url("./resources/svg/nav-fa/bars-solid.svg");
 }

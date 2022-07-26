@@ -15,15 +15,11 @@ let shuffleButton =    document.getElementById('shuffle-button');
 let uiQueue       =    document.getElementById('queue-list');
 volumeSlider.style.display = 'none';
 
-<<<<<<< HEAD
 let searchButton = document.getElementsByClassName('search-button')[0]; 
 let searchBar = document.getElementById('search-bar');
 let fullScreenButton = document.getElementById('full-screen-button');
-=======
-let searchButton  =    document.getElementsByClassName('search-button')[0]; 
-let searchBar     =    document.getElementById('search-bar');
 
->>>>>>> f3b258a350e3a0380c1b4750c489fda171ffe018
+
 
 //START CONTROL PANEL BUTTONS
 
