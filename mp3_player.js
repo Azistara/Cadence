@@ -8,6 +8,8 @@ let playButton =  document.getElementById("play-button");
 let stopButton = document.getElementById('stop-button');
 let volumeButton = document.getElementById('volume-button');
 let volumeSlider = document.getElementById('volume-slider');
+let forwardButton = document.getElementById("forward-button");
+let prevButton = document.getElementById('prev-button');
 volumeSlider.style.display = 'none';
 
 let searchButton = document.getElementsByClassName('search-button')[0]; 
@@ -39,15 +41,23 @@ stopButton.addEventListener('click', stopMp3);
 
 let playNextSong = () => {
   songQueue.push(songQueue.shift()); //put finished song at end of queue
-  audio = new Audio(songQueue[0]); //set the current song to the song at the front of the queue
+  audio.setAttribute('src', songQueue[0]); //set the current song to the song at the front of the queue
+  audio.load(); //load new song so that it doesn't play the old song.
   audio.play(); //start playing the current song
 }
 audio.addEventListener('ended', playNextSong);
+forwardButton.addEventListener('click', playNextSong);
 
+let playPreviousSong = () =>{
+  songQueue.unshift(songQueue.pop()); //move last song to front of queue
+  audio.setAttribute('src', songQueue[0]); //set the current song to the song at the front of the queue
+  audio.load(); //load new song so that it doesn't play the old song.
+  audio.play(); //start playing the current song
+};
+prevButton.addEventListener('click', playPreviousSong);
 let toggleVolumeSlider = () =>{ //display  slider above the volume button
   if(volumeSlider.style.display === 'none'){
     volumeSlider.style.display = 'block';
-    console.log("success!!");
   }
   else{
     volumeSlider.style.display = 'none';
@@ -60,7 +70,11 @@ volumeSlider.oninput = function() {audio.volume =  (volumeSlider.value / 100); }
 
 
 let displaySearchBar = () =>{
+  if(searchBar.style.visibility!=='visible')
   searchBar.style.visibility = 'visible';
+  else{
+    searchBar.style.visibility = 'hidden';
+  }
  
 };
 

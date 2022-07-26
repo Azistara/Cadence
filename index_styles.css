@@ -10,6 +10,10 @@ body{
     overflow: hidden;
 }
 
+button:hover{
+    opacity: .8;
+}
+
 button:active{
     background-color: white;
     opacity: .5;
