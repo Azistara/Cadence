@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-exitFs-tlb">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-exitFs-tlb" clip-path="url(#clip-az-exitFs-tlb)">
+    <g id="az-exitFs-tlb-2" data-name="az-exitFs-tlb">
+      <path id="Union_25" data-name="Union 25" d="M-1690-3344v-89.646l-96.968,96.968a25,25,0,0,1-35.356,0,25,25,0,0,1,0-35.356l96.968-96.967H-1815a25,25,0,0,1-25-25,25,25,0,0,1,25-25h150a25,25,0,0,1,25,25v150a25,25,0,0,1-25,25A25,25,0,0,1-1690-3344Z" transform="translate(1896 3775)" fill="#fff"/>
+      <path id="Union_26" data-name="Union 26" d="M-1690-3344v-89.646l-73.744,73.744a25,25,0,0,1-35.356,0,25,25,0,0,1,0-35.355l73.744-73.744H-1815a25,25,0,0,1-25-25,25,25,0,0,1,25-25h150a25,25,0,0,1,25,25v150a25,25,0,0,1-25,25A25,25,0,0,1-1690-3344Z" transform="translate(-1384 -3263) rotate(180)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

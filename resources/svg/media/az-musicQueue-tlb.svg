@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-musicQueue-tlb">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-musicQueue-tlb" clip-path="url(#clip-az-musicQueue-tlb)">
+    <g id="az-musQueue-tlb" transform="translate(0 -25)">
+      <rect id="Rectangle_114" data-name="Rectangle 114" width="400" height="50" rx="25" transform="translate(56 106)" fill="#fff"/>
+      <rect id="Rectangle_128" data-name="Rectangle 128" width="400" height="50" rx="25" transform="translate(56 200)" fill="#fff"/>
+      <rect id="Rectangle_129" data-name="Rectangle 129" width="200" height="50" rx="25" transform="translate(56 294)" fill="#fff"/>
+      <g id="Music" transform="translate(-84.315 2.958)">
+        <rect id="Rectangle_122" data-name="Rectangle 122" width="28" height="105" transform="translate(388.815 309.542)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+        <path id="Subtraction_14" data-name="Subtraction 14" d="M127.487,20.182H.487v-16l29.886-4h97.114v20Z" transform="translate(388.328 289.361)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+        <rect id="Rectangle_123" data-name="Rectangle 123" width="29" height="104" transform="translate(511.815 289.542)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+        <circle id="Ellipse_52" data-name="Ellipse 52" cx="38" cy="38" r="38" transform="translate(340.815 377.542)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+        <circle id="Ellipse_53" data-name="Ellipse 53" cx="38.5" cy="38.5" r="38.5" transform="translate(463.815 357.542)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+        <path id="Path_25" data-name="Path 25" d="M-.121,16.916l103-17h-103Z" transform="translate(412.936 309.626)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+        <path id="Path_26" data-name="Path 26" d="M119.284.542l-120,16h120Z" transform="translate(420.531 273)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+      </g>
+    </g>
+  </g>
+</svg>

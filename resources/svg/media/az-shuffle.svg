@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="310" viewBox="0 0 380 310">
+  <g id="az-shuffle" transform="translate(-86 -100.753)">
+    <rect id="Rectangle_142" data-name="Rectangle 142" width="100" height="30" rx="15" transform="translate(86 155.707)" fill="#fff"/>
+    <path id="Subtraction_15" data-name="Subtraction 15" d="M188.8,196.091a14.958,14.958,0,0,1-10.606-4.36l-63.754-63.272,21.243-21.023L199.4,170.679a14.807,14.807,0,0,1,0,21.053A14.961,14.961,0,0,1,188.8,196.091Zm-84.045-77.244L0,14.887,10.607,4.36a15.082,15.082,0,0,1,21.213,0L126,97.824l-21.242,21.023Z" transform="translate(151.266 157.213)" fill="#fff"/>
+    <path id="Path_32" data-name="Path 32" d="M0,0,251.1.9a15.076,15.076,0,0,1,15,15,14.819,14.819,0,0,1-14.893,14.893L15.053,29.947a15.076,15.076,0,0,1-15-15Z" transform="translate(361.287 172.062) rotate(135)" fill="#fff"/>
+    <path id="Rectangle_144" data-name="Rectangle 144" d="M15,0h85a0,0,0,0,1,0,0V30a0,0,0,0,1,0,0H15A15,15,0,0,1,0,15v0A15,15,0,0,1,15,0Z" transform="translate(326.718 155.707)" fill="#fff"/>
+    <path id="Rectangle_152" data-name="Rectangle 152" d="M15,0h85a0,0,0,0,1,0,0V30a0,0,0,0,1,0,0H15A15,15,0,0,1,0,15v0A15,15,0,0,1,15,0Z" transform="translate(326.718 324.806)" fill="#fff"/>
+    <rect id="Rectangle_143" data-name="Rectangle 143" width="100" height="30" rx="15" transform="translate(86 324.806)" fill="#fff"/>
+    <path id="Union_29" data-name="Union 29" d="M15.05,100.05A15.087,15.087,0,0,1,0,85V15a15,15,0,0,1,30,0V70.05H85.051a15,15,0,0,1,0,30Z" transform="translate(395.254 242.246) rotate(-135)" fill="#fff"/>
+    <path id="Union_30" data-name="Union 30" d="M15.05,100.05A15.085,15.085,0,0,1,0,85V15a15,15,0,1,1,30,0v55.05H85.05a15,15,0,1,1,0,30Z" transform="translate(395.253 410.753) rotate(-135)" fill="#fff"/>
+  </g>
+</svg>

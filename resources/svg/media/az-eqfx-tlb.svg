@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-eqfx-tlb">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-eqfx-tlb" clip-path="url(#clip-az-eqfx-tlb)">
+    <g id="az-eq-tlb">
+      <rect id="Rectangle_125" data-name="Rectangle 125" width="100" height="250" rx="50" transform="translate(56 206)" fill="#fff"/>
+      <rect id="Rectangle_127" data-name="Rectangle 127" width="100" height="200" rx="50" transform="translate(356 256)" fill="#fff"/>
+      <rect id="Rectangle_126" data-name="Rectangle 126" width="100" height="400" rx="50" transform="translate(206 56)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

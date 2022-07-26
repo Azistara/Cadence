@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340.5" height="227.498" viewBox="0 0 340.5 227.498">
+  <g id="az-musicQueue" transform="translate(-87 -144)">
+    <rect id="Rectangle_114" data-name="Rectangle 114" width="338" height="30" rx="15" transform="translate(87 144)" fill="#fff"/>
+    <rect id="Rectangle_118" data-name="Rectangle 118" width="338" height="30" rx="15" transform="translate(87 225.096)" fill="#fff"/>
+    <rect id="Rectangle_114-2" data-name="Rectangle 114" width="220" height="30" rx="15" transform="translate(87 306.366)" fill="#fff"/>
+    <g id="Music" transform="translate(316.5 271.722)">
+      <rect id="Rectangle_122" data-name="Rectangle 122" width="16" height="57" transform="translate(26 19.276)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Subtraction_14" data-name="Subtraction 14" d="M69.186,11.007H0V2.359L17.3,0H69.186V11.006Z" transform="translate(25.948 8.648)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+      <rect id="Rectangle_123" data-name="Rectangle 123" width="16" height="57" transform="translate(92.5 8.552)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+      <circle id="Ellipse_52" data-name="Ellipse 52" cx="21" cy="21" r="21" transform="translate(0 55.276)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+      <circle id="Ellipse_53" data-name="Ellipse 53" cx="21" cy="21" r="21" transform="translate(66.5 45.552)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Path_25" data-name="Path 25" d="M0,9.434,55.821,0H0Z" transform="translate(39.314 19.655)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Path_26" data-name="Path 26" d="M64.757.439-.5,9.087H64.757Z" transform="translate(43.667 -0.439)" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="5"/>
+    </g>
+  </g>
+</svg>

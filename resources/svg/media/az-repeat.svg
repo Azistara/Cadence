@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <g id="az-repeat" transform="translate(-106 -59)">
+    <g id="Group_36" data-name="Group 36">
+      <path id="Rectangle_144" data-name="Rectangle 144" d="M0,0H217a15,15,0,0,1,15,15v0a15,15,0,0,1-15,15H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(140 115)" fill="#fff"/>
+      <path id="Rectangle_155" data-name="Rectangle 155" d="M0,0H35A15,15,0,0,1,50,15v0A15,15,0,0,1,35,30H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(371.868 129.711) rotate(90)" fill="#fff"/>
+      <path id="Union_29" data-name="Union 29" d="M0,85V15q0-.146,0-.291A15,15,0,0,1,15,0H85a15,15,0,0,1,0,30H30V85A15,15,0,0,1,0,85Z" transform="translate(106 129.711) rotate(-45)" fill="#fff"/>
+    </g>
+    <g id="Group_37" data-name="Group 37" transform="translate(0 -47)">
+      <path id="Rectangle_157" data-name="Rectangle 157" d="M15,0H232a0,0,0,0,1,0,0V30a0,0,0,0,1,0,0H15A15,15,0,0,1,0,15v0A15,15,0,0,1,15,0Z" transform="translate(140 320)" fill="#fff"/>
+      <path id="Rectangle_156" data-name="Rectangle 156" d="M0,0H35A15,15,0,0,1,50,15v0A15,15,0,0,1,35,30H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(140.132 337.421) rotate(-90)" fill="#fff"/>
+      <path id="Union_31" data-name="Union 31" d="M0,85V15q0-.146,0-.291A15,15,0,0,1,15,0H85a15,15,0,0,1,0,30H30V85A15,15,0,0,1,0,85Z" transform="translate(406 335.289) rotate(135)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

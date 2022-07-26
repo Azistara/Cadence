@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-nowPlaying-tlb">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-nowPlaying-tlb" clip-path="url(#clip-az-nowPlaying-tlb)">
+    <g id="az-nowPlaying-tlb-2" data-name="az-nowPlaying-tlb">
+      <path id="Union_24" data-name="Union 24" d="M-1793.75-3379.7a16.249,16.249,0,0,1-16.25-16.25v-97.5a16.25,16.25,0,0,1,16.25-16.25,16.25,16.25,0,0,1,16.25,16.25v58.268l69.076-69.076a16.25,16.25,0,0,1,22.981,0,16.25,16.25,0,0,1,0,22.982l-69.076,69.076h58.27a16.25,16.25,0,0,1,16.25,16.25,16.249,16.249,0,0,1-16.25,16.25Z" transform="translate(1557.79 -3313.746) rotate(-135)" fill="#fff"/>
+      <rect id="Rectangle_139" data-name="Rectangle 139" width="150" height="150" rx="50" transform="translate(81 81)" fill="#fff"/>
+      <rect id="Rectangle_141" data-name="Rectangle 141" width="150" height="150" rx="50" transform="translate(81 281)" fill="#fff"/>
+      <rect id="Rectangle_140" data-name="Rectangle 140" width="150" height="150" rx="50" transform="translate(281 81)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
