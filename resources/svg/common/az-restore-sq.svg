@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-restore-sq">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-restore-sq" clip-path="url(#clip-az-restore-sq)">
+    <g id="az-restore-sq-2" data-name="az-restore-sq" transform="translate(-29 26)">
+      <path id="Subtraction_18" data-name="Subtraction 18" d="M-4820-1393h-35v-240h-240v-35h275v275Z" transform="translate(5270 1734)" fill="#fff"/>
+      <path id="Subtraction_18-2" data-name="Subtraction 18" d="M-4805-1408h-275v-275h275v275Zm-225-225v175h175v-175Z" transform="translate(5199 1802)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

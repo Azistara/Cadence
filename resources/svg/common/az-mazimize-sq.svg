@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-mazimize-sq">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-mazimize-sq" clip-path="url(#clip-az-mazimize-sq)">
+    <g id="az-maximize-sq">
+      <path id="Subtraction_18" data-name="Subtraction 18" d="M-4805-1408h-275v-275h275v275Zm-225-225v175h175v-175Z" transform="translate(5199 1802)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

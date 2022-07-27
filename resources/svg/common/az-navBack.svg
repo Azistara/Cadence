@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-navBack">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-navBack" clip-path="url(#clip-az-navBack)">
+    <g id="az-navBack-2" data-name="az-navBack" transform="translate(80 81)">
+      <path id="Union_35" data-name="Union 35" d="M157.453,342.773,7.3,194.119A24.478,24.478,0,0,1,.057,175,24.478,24.478,0,0,1,7.3,155.882L157.453,7.227a25.1,25.1,0,0,1,35.248,0,24.5,24.5,0,0,1,0,34.895L58.483,175,192.7,307.878a24.5,24.5,0,0,1,0,34.9,25.1,25.1,0,0,1-35.248,0Z" transform="translate(0.163 0)" fill="#fff"/>
+      <rect id="Rectangle_133" data-name="Rectangle 133" width="350" height="50" rx="25" transform="translate(0 150)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

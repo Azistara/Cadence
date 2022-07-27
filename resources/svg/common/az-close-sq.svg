@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-close-sq">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-close-sq" clip-path="url(#clip-az-close-sq)">
+    <g id="az-close-sq-2" data-name="az-close-sq" transform="translate(-22.595 -22.095)">
+      <rect id="Rectangle_166" data-name="Rectangle 166" width="329.076" height="59.832" transform="translate(183.903 141.095) rotate(45)" fill="#fff"/>
+      <rect id="Rectangle_169" data-name="Rectangle 169" width="329.076" height="59.832" transform="translate(141.595 373.787) rotate(-45)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

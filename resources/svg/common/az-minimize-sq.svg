@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-az-minimize-sq">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="az-minimize-sq" clip-path="url(#clip-az-minimize-sq)">
+    <g id="az-minimize-sq-2" data-name="az-minimize-sq">
+      <rect id="Rectangle_166" data-name="Rectangle 166" width="200" height="50" transform="translate(156 344)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
