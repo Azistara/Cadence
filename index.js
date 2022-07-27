@@ -1,5 +1,8 @@
 //entry point to the app
 const {BrowserWindow} = require("electron-acrylic-window");
+
+const url = require('url');
+const path = require('path');
 const { setVibrancy } = require('electron-acrylic-window');
 const { app } = require('electron');
 
