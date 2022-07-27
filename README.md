@@ -36,8 +36,9 @@ Media player built with Electron
 - [ ] Light/Dark Mode
 
 # Packages Used
-- Electron
-- Electron-Acrylic-Window
+- electron
+- electron-Acrylic-Window
+- music-metadata
 
 # Closing Words
 Cadence is developed by students who are beginners in software development.
