@@ -17,7 +17,7 @@ op = {
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    frame: true,
+    frame: false,
   
     width: 1000,
     height: 1000,
