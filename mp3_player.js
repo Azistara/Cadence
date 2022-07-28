@@ -53,7 +53,7 @@ let playNextSong = () => {
   audio.load(); //load new song so that it doesn't play the old song.
   playMp3(); //start playing the current song
   //clear the queue
-  while (uiQueue.firstChild) {
+  while (uiQueue.firstChild) { // TODO: save the first child maybe add it back after it is deleted
     uiQueue.removeChild(uiQueue.lastChild);
   }
   //add all songs in js songQueue to UI queue
@@ -153,6 +153,8 @@ const queueItem = document.createElement('div');
 songQueue.forEach(song => {
   addSongToUIQueue(song);
 });
+
+//END QUEUE FUNCTIONS
 
 let displaySearchBar = () =>{
   if(searchBar.style.visibility!=='visible')
