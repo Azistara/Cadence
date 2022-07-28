@@ -29,7 +29,7 @@ let fs = require('fs');
        console.log(`File: ${filename}  Doesn\'t Exist.`);
        return null;
     }
-    return null;
+    return musicFolderPaths;
  }
 
  module.exports = {loadMusicFolders};
