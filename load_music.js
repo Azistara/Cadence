@@ -22,10 +22,6 @@ let fs = require('fs');
        });
        musicFolderPaths.forEach((el) =>{ //print all the added folder paths to the console.
           console.log(el + '\n');
-          fs.copyFile(el, dir + "/" + el,  (err) => {  //put the file in the directory
-            if (err) {
-              console.log("Error Found:", err);
-            }});
             return musicFolderPaths;
        });
     

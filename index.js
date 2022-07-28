@@ -8,7 +8,7 @@ const { app } = require('electron');
 const os = require ('os');
 let fs = require('fs');
 const {loadMusicFolders} = require('./load_music.js');
-const {extractSongsFromPaths} = require("./extract_songs.js");
+const {extractSongs} = require("./extract_songs.js");
 const username = os.userInfo().username;
 
 
@@ -40,7 +40,7 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   createWindow(); //creates a renderer process
-  if(os.platform() ==='win32'){ extractSongsFromPaths(loadMusicFolders()); }//run this command only if the folder "user_music does not already exist in the CADENCE project folder..."
+  if(os.platform() ==='win32'){ extractSongs(loadMusicFolders()); }
   else if(os.platform() === 'linux'){ }//TODO: get all music from system files for user on linux
   else if(os.platform() === 'darwin'){ }//TODO: get all music from system files for user on mac OS
   else{

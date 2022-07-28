@@ -65,4 +65,4 @@ let extractSongs = (pathArray) =>{
 
 
 
-module.exports = {extractSongsFromPaths};
+module.exports = {extractSongs};
