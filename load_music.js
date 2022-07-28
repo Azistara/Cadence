@@ -4,13 +4,9 @@ let fs = require('fs');
 
 
 
- function loadMusicFolders() { //returns a folder of all the files that have music in them.
+ function loadMusicFolders() { //returns an array of all the files that have music in them.
    const username = os.userInfo().username;
    let musicFolderPaths = [];
-   let dir = './system_music_files';
-   if (!fs.existsSync(dir)){ //create the folder to be populated and returned.
-       fs.mkdirSync(dir);
-   }
    let filename = `C:/Users/${username}/AppData/Roaming/Microsoft/Windows/Libraries/Music.library-ms`;
     //Check if file exists
     if(fs.existsSync(filename)) {
@@ -30,7 +26,7 @@ let fs = require('fs');
             if (err) {
               console.log("Error Found:", err);
             }});
-          return dir;
+            return musicFolderPaths;
        });
     
     } else {

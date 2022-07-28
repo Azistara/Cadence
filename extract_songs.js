@@ -7,6 +7,15 @@ let  extractSongsFromFolder = async (dir) =>{  //gets all song files (m4a, mp3, 
 let allSongsFolder;
 
 
+
+let isAudioFile = (file) =>{
+    switch(file.type){
+        case: ''
+    }
+}
+
+
+
 //loop through the passed in folder creating a song file for every song and push files to  all_songs folder
     try {
       const files = await fs.promises.readdir(dir);

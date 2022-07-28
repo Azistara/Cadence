@@ -40,6 +40,11 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   createWindow(); //creates a renderer process
-  extractSongsFromFolder(loadMusicFolders()); //run this command only if the folder "user_music does not already exist in the CADENCE project folder..."
-
+  if(os.platform() ==='win32'){ extractSongsFromFolder(loadMusicFolders()); }//run this command only if the folder "user_music does not already exist in the CADENCE project folder..."
+  else if(os.platform() === 'linux'){ }//TODO: get all music from system files for user on linux
+  else if(os.platform() === 'darwin'){ }//TODO: get all music from system files for user on mac OS
+  else{
+    console.log("This app does not support OS other than Windows, Linux, and Mac OS. Sorry!");
+    alert("This app does not support OS other than Windows, Linux, and Mac OS. Sorry!");
+  }
 });
