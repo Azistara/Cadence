@@ -1,30 +1,43 @@
 const os = require ('os');
 let fs = require('fs');
 
-const username = os.userInfo().username;
-let musicFolderPaths = [];
-let filename = `C:/Users/${username}/AppData/Roaming/Microsoft/Windows/Libraries/Music.library-ms`;
 
 
-function loadMusicFolders() {  
-   
+
+ function loadMusicFolders() { //returns a folder of all the files that have music in them.
+   const username = os.userInfo().username;
+   let musicFolderPaths = [];
+   let dir = './system_music_files';
+   if (!fs.existsSync(dir)){ //create the folder to be populated and returned.
+       fs.mkdirSync(dir);
+   }
+   let filename = `C:/Users/${username}/AppData/Roaming/Microsoft/Windows/Libraries/Music.library-ms`;
     //Check if file exists
     if(fs.existsSync(filename)) {
        let data = fs.readFileSync(filename, 'utf8').split('\n') //splits the xml file into lines
        
-       data.forEach((line) => {
-        console.log(line + '\n');
-         if((line.substring(0,5) === '<url>') && line.substring(line.length-6, line.length) === '</url>'){ //if the line is a path to a music folder
-            let currentFolder = line.substring(5, line.length-6);
-            if(currentFolder.substring(0, 11 ) !== "knownfolder"){
+       data.forEach((line) => {//perform on every line:
+         if(line.includes('<url>') && line.includes('</url>')){ //if the line is a path to a music folder       better to check like this:  && line.substring(line.length-6, line.length === '</url>'
+            let currentFolder = line.trim().substring(5, line.length-15); //strip off the xml leaving just a path string
+            if(currentFolder.substring(0, 11 ) !== "knownfolder"){//don't grab knownfolders as they have weird content as their path
             musicFolderPaths.push(currentFolder); //add the folder path to the musicFoldersPaths
             }
          }
-       })
+       });
+       musicFolderPaths.forEach((el) =>{ //print all the added folder paths to the console.
+          console.log(el + '\n');
+          fs.copyFile(el, dir + "/" + el,  (err) => {  //put the file in the directory
+            if (err) {
+              console.log("Error Found:", err);
+            }});
+          return dir;
+       });
     
     } else {
-       console.log("File Doesn\'t Exist.");
+       console.log(`File: ${filename}  Doesn\'t Exist.`);
+       return null;
     }
+    return null;
  }
- 
- loadMusicFolders();
+
+ module.exports = {loadMusicFolders};
