@@ -32,6 +32,8 @@ const createWindow = () => {
     },
     width: 1200,
     height: 1000,
+    minHeight: 500,
+    minWidth: 500,
   })
   setVibrancy(win, op); 
   win.loadFile('index.html');

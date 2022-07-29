@@ -12,21 +12,13 @@ body{
 
 button:hover{
     opacity: .8;
+    cursor: pointer;
 }
 
 button:active{
-    background-color: white;
     opacity: .5;
 }
 
-
-#the-blur{
-    background: rgba(255, 255, 255, 0.2); 
-    backdrop-filter: blur(40px); 
-    height: inherit;
-      width: inherit;
-      z-index: 20px;
-}
 h1, h2, h3 {
     margin-left: 5%;
     color: white;
@@ -42,6 +34,12 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
 
+}
+
+@media only screen and (max-height: 600px) {
+    header{
+        display: none;
+    }
 }
 
 #relax-h3{
@@ -236,6 +234,7 @@ figcaption{
     width: 200px;
 }
 
+
 #now-playing-container{
     z-index: 20px;
     width: 20%;
@@ -308,6 +307,28 @@ figcaption{
     background-repeat: no-repeat;
     background-size: cover;
     border:none;
+}
+
+@media only screen and(max-width: 700px) {
+    
+.control-button{
+    height: 20px;
+    width: 20px;
+ 
+}
+
+
+#control-panel-wrapper{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    height: fit-content;
+    align-items: center;
+  
+}
+
 }
 
 
