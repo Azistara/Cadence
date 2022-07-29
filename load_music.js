@@ -20,6 +20,9 @@ let fs = require('fs');
             }
          }
        });
+       if(os.platform() === 'win32'){
+       musicFolderPaths.push(`C:/Users/${username}/Music`); //hardcode add Music folder 
+       }
        musicFolderPaths.forEach((el) =>{ //print all the added folder paths to the console.
           console.log(el + '\n');
             return musicFolderPaths;
