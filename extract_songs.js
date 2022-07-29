@@ -40,17 +40,15 @@ const getAllFiles = function(dirPath, arrayOfFiles) {
     arrayOfFiles = arrayOfFiles || [];
   
     files.forEach(function(file) {
-      if (fs.statSync(dirPath + "/" + file).isDirectory()) { //recursively call the function 
-        arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
+      if (fs.statSync(dirPath + "/" + file).isDirectory()) { 
+        arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles); //recursively call the function on the current directory path
       } else { //base case... a file was found
-        if(isAudioFile(file)){ //if found file is a audio file 
-        arrayOfFiles.push(path.join(__dirname, dirPath, "/", file)); //then add it to the array
+        if(isAudioFile(file)){ //if found file is a audio file TODO: check if it is a duplicate and ignore if dubplicate
+        arrayOfFiles.push(path.join(__dirname, dirPath, "/", file)); //then append the absolute path and add this path to the array
        }
       }
     });
-    // files.forEach((file) =>{ //TODO delete this  
-    //     console.log(file); //print every added file
-    //     });
+
     return arrayOfFiles; //return the array of audio files
   }
 
@@ -81,15 +79,3 @@ let extractSongs = (pathArray) =>{
 
 module.exports = {extractSongs};
 
-
-
-
-// if(fs.statSync(p).isDirectory()){ // if current path  is a directory
-//     filenames = fs.readdirSync(p); //add all files in the directory that are audio files to the files array. 
-//     filenames.forEach((file) =>{  //TODO: make this recursive to handle sub directories
-//         if(isAudioFile(file)){
-//             let newFile =  (p+ '\\' + file);
-//             files.push(newFile);
-            
-//         }
-//     });
