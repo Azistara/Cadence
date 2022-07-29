@@ -24,6 +24,9 @@ let isAudioFile = (file) =>{ //returns true if the file arg is an audio file
         case '.m4a' : //.m4a 
             isAudio =  true;
             break;
+        case '.flac' : //.flac 
+            isAudio =  true;
+            break;
         default:
             isAudio =  false;
     }
@@ -60,7 +63,7 @@ let extractSongs = (pathArray) =>{
             console.log(file);
         })
     });
-   
+   console.log("Length of files: " + files.length);
     return files; // return the songs as absolute paths array
 }
 
