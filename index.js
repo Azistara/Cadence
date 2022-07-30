@@ -6,10 +6,12 @@ const path = require('path');
 const { setVibrancy } = require('electron-acrylic-window');
 const { app } = require('electron');
 const os = require ('os');
-let fs = require('fs');
+const fs = require('fs');
+const {setupDatabase} = require("./setup_database.js");
 const {loadMusicFolders} = require('./load_music.js');
 const {extractSongs} = require("./extract_songs.js");
 const username = os.userInfo().username;
+
 
 
 
@@ -42,7 +44,11 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   createWindow(); //creates a renderer process
-  if(os.platform() ==='win32'){ extractSongs(loadMusicFolders()); }
+  setupDatabase();  //setup the mysql database
+
+  if(os.platform() ==='win32'){ 
+    extractSongs(loadMusicFolders()); //load all the file paths to every audio file on the user's system. 
+  }
   else if(os.platform() === 'linux'){ }//TODO: get all music from system files for user on linux
   else if(os.platform() === 'darwin'){ }//TODO: get all music from system files for user on mac OS
   else{
