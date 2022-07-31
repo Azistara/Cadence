@@ -3,7 +3,7 @@ const { mysqlSettings } = require('./mysql_settings');
 
 
 let setupDatabase = () =>{
-mysqlSettings.database = 'cadence';
+
 var connection = mysql.createConnection(mysqlSettings);
  //connect to the server
 connection.connect(function(err) {
@@ -31,13 +31,8 @@ connection.end(function(err){ //close the connection so that we can reopen it wi
     });
 
     //reconnect to the server with the database
-
-    connection = mysql.createConnection({
-        host     : 'localhost',
-        user     : 'root',
-        password : 'CleveM3bby!',
-        database : 'Cadence'
-      });
+    mysqlSettings.database = 'cadence';
+    connection = mysql.createConnection(mysqlSettings);
        //reconnect to the server
       connection.connect(function(err) {
         if (err) {
