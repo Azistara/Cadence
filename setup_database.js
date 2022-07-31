@@ -1,13 +1,10 @@
 var mysql = require('mysql');
+const { mysqlSettings } = require('./mysql_settings');
 
 
 let setupDatabase = () =>{
-
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'CleveM3bby!'
-});
+mysqlSettings.database = 'cadence';
+var connection = mysql.createConnection(mysqlSettings);
  //connect to the server
 connection.connect(function(err) {
   if (err) {
