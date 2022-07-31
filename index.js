@@ -1,17 +1,15 @@
 //entry point to the app
-const {BrowserWindow} = require("electron-acrylic-window");
+//creates application window. Connects to mysql server. Sets up the db. Loads all audio into the db.
 
-const url = require('url');
-const path = require('path');
+//import modules
+const {BrowserWindow} = require("electron-acrylic-window");
 const { setVibrancy } = require('electron-acrylic-window');
 const { app } = require('electron');
 const os = require ('os');
-const fs = require('fs');
 const {setupDatabase} = require("./setup_database.js");
 const {loadMusicFolders} = require('./load_music.js');
 const {extractSongs} = require("./extract_songs.js");
-const username = os.userInfo().username;
-
+const {getMetadata} = require("./get_file_metadata");
 
 
 
@@ -47,7 +45,9 @@ app.whenReady().then(() => {
   setupDatabase();  //setup the mysql database
 
   if(os.platform() ==='win32'){ 
-    extractSongs(loadMusicFolders()); //load all the file paths to every audio file on the user's system. 
+    extractSongs(loadMusicFolders()); //load all the file paths to every audio file on the user's system.
+
+    console.log(getMetadata("")); //HAVE ZURIEL PUT AN ITUNES FILE PATH IN THAT FUNCTION CALL as a test
   }
   else if(os.platform() === 'linux'){ }//TODO: get all music from system files for user on linux
   else if(os.platform() === 'darwin'){ }//TODO: get all music from system files for user on mac OS

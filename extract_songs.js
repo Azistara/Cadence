@@ -44,7 +44,7 @@ const getAllFiles = function(dirPath, arrayOfFiles) {
         arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles); //recursively call the function on the current directory path
       } else { //base case... a file was found
         if(isAudioFile(file)){ //if found file is a audio file TODO: check if it is a duplicate and ignore if dubplicate
-        arrayOfFiles.push(path.join(__dirname, dirPath, "/", file)); //then append the absolute path and add this path to the array
+        arrayOfFiles.push(path.join( dirPath, "/", file)); //then append the absolute path and add this path to the array
        }
       }
     });
@@ -65,13 +65,9 @@ let extractSongs = (pathArray) =>{
         return files;
     }
     pathArray.forEach((p) => {
-       
         audioFiles = audioFiles.concat(getAllFiles(p)); //add every audio file to the files array.
         });
-        audioFiles.forEach((file) =>{ //TODO delete this  
-        console.log(file); //print every added file
-        });
-        console.log(audioFiles.length);
+    console.log("number of added audioFiles: " + audioFiles.length);
     return audioFiles; // return the songs as absolute paths array
 }
 
