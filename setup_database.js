@@ -44,11 +44,30 @@ connection.end(function(err){ //close the connection so that we can reopen it wi
       });
       
       //create the tables if they don't exist
-      var sql = 'CREATE TABLE AllSongs ( SongID PRIMARY KEY AUTO_INCREMENT int, LastName varchar(255), FirstName varchar(255), Address varchar(255), City varchar(255) )';
 
+      //create AllSongs table
+      var sql = 'CREATE TABLE IF NOT EXISTS AllSongs ( SongID int NOT NULL AUTO_INCREMENT, '
+      + 'artist varchar(255), title varchar(255), album varchar(255), albumArt varchar(255), '
+      + 'genre varchar(255), duration float, year int, MD5 varchar(255), filePath varchar(255), PRIMARY KEY (SongID))'; 
 
+      connection.query(sql, function (error, results, fields) { //add the AllSongs table to the cadence db. 
+        if (error) throw error;
+        else{
+        console.log("Successfully created AllSongs TABLE \n");
+        }
+      });
 
-
+      //create PlayLists table
+      var sql = 'CREATE TABLE IF NOT EXISTS Playlists ( PlaylistID int, SongIDs JSON, '
+      + 'PlaylistTitle varchar(255), Author varchar(255), PlaylistMood varchar(255) ) ';
+      console.log(sql);
+      connection.query(sql, function (error, results, fields) { //add the AllSongs table to the cadence db. 
+        if (error) throw error;
+        else{
+        console.log("Successfully created Playlists TABLE \n");
+        }
+      });
+      
 
 };
 
