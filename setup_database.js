@@ -47,7 +47,7 @@ connection.end(function(err){ //close the connection so that we can reopen it wi
 
       //create AllSongs table
       var sql = 'CREATE TABLE IF NOT EXISTS AllSongs ( SongID int NOT NULL AUTO_INCREMENT, '
-      + 'artist varchar(255), title varchar(255), album varchar(255), albumArt varchar(255), '
+      + 'artist varchar(255), albumArtist varchar(255), title varchar(255), album varchar(255), albumArt varchar(255), '
       + 'genre varchar(255), duration float, year int, MD5 varchar(255), filePath varchar(255), PRIMARY KEY (SongID))'; 
 
       connection.query(sql, function (error, results, fields) { //add the AllSongs table to the cadence db. 

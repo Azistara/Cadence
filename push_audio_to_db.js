@@ -9,21 +9,21 @@ let addAudioFileToDB = (audioPath, sqlConnection) =>{
 
     if((metadata.format.duration <= 10) || ( typeof metadata.format.duration === 'undefined')){return;} //this file is less than 10 seconds long and we will not add it to the database
 
-    else{
+    else{ //insert the song as a row into the AllSongs table
         //get all the metadata out of object 
-        let duration = metadata.format.duration;
-        let SongTitle;
-        let Artist;
-        let Album;
-        let AlbumArt;
-        let AlbumArtist;
-        let Genre;
-        let Year;
-        let MD5;
+        let Duration = metadata.format.duration;
+        let SongTitle = metadata.common.title;
+        let Artist =  metadata.common.artist;
+        let Album = metadata.common.album;
+        let AlbumArt  = metadata.common.picture;
+        let AlbumArtist = metadata.common.albumartist;
+        let Genre = metadata.common.genre;
+        let Year = metadata.common.year;
+        let MD5 = ""; //TODO find this value in the metadata object.
 
-        //insert it into the table
-
-        let sql = 'INSERT into AllSongs ';
+        //insert song into the table
+        let sql = "INSERT INTO AllSongs (artist, title, album, albumArt, genre, duration, year, MD5, filePath, albumArtist) " +
+        `VALUES ( ${Artist}, ${SongTitle}, ${Album}, ${AlbumArt}, ${Genre}, ${Duration}, ${Year}, ${MD5}, ${audioPath}, ${AlbumArtist})`;
         sqlConnection.query(sql, function (error, results, fields) {
             if (error) throw error;
             else{
