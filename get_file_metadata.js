@@ -2,7 +2,7 @@ const mm = require('music-metadata');
 const util = require('util');
 
 let getMetadata = async (audioFile) => { //takes file path and returns file's metadata as js object with primary subobjects: format, native, common 
-  if(audioFile.length <= 4){
+  if(audioFile.length <= 4){ //if file path is less than 5 chars then it is not a valid path.
     console.log("got passed a bad file path... returning empty object.");
     return {};
   }

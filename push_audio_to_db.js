@@ -36,8 +36,8 @@ let addAudioFileToDB = async (audioPath) =>{ //adds a file's metadata and absolu
         
         //insert metadata and pathname of audio file into the table
         let sql = "INSERT INTO AllSongs (artist, title, album, albumArt, genre, duration, year, MD5, filePath, albumArtist) " +
-        `VALUES ( '${Artist}', '${SongTitle}', '${Album}', '${AlbumArt}', '${Genre}', ${Duration}, ${Year}, '${MD5}', '${audioPath}', '${AlbumArtist}')`;
-        sqlConnection.query(sql, function (error, results, fields) { //launch the INSERT query
+        `VALUES ( '${Artist}', '${SongTitle}', '${Album}', '${AlbumArt}', '${Genre}', ${Duration}, ${Year}, '${MD5}', ?, '${AlbumArtist}')`;
+        sqlConnection.query(sql, [''+audioPath+''], function (error, results, fields) { //launch the INSERT query
             if (error) {console.log("Error in inserting song." + error.stack); }
             else{
             console.log("audio successfully uploaded to the db. \n");
