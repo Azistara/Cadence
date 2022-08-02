@@ -8,7 +8,7 @@ let getMetadata = async (audioFile) => { //takes file path and returns file's me
   }
     try {
     const metadata = await mm.parseFile(audioFile);
-    console.log("example metadata of an audio file: " + util.inspect(metadata, { showHidden: true, depth: null }));
+  // console.log("example metadata of an audio file: " + util.inspect(metadata, { showHidden: true, depth: null }));
     return metadata;
   } catch (error) {
     console.error(error.message);

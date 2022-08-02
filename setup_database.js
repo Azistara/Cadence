@@ -60,7 +60,6 @@ connection.end(function(err){ //close the connection so that we can reopen it wi
       //create PlayLists table
       var sql = 'CREATE TABLE IF NOT EXISTS Playlists ( PlaylistID int, SongIDs JSON, '
       + 'PlaylistTitle varchar(255), Author varchar(255), PlaylistMood varchar(255) ) ';
-      console.log(sql);
       connection.query(sql, function (error, results, fields) { //add the AllSongs table to the cadence db. 
         if (error) throw error;
         else{
@@ -68,6 +67,12 @@ connection.end(function(err){ //close the connection so that we can reopen it wi
         }
       });
       
+      connection.end(function(err){ //close the connection 
+        if(err){
+            console.log('error closing connection' + err.stack);
+            return;
+        }
+        });
 
 };
 

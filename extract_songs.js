@@ -1,7 +1,9 @@
 
-fs = require('fs');
-path = require('path');
-
+const fs = require('fs');
+const path = require('path');
+const {addAudioFileToDB} = require('./push_audio_to_db');
+var mysql = require('mysql');
+const {mysqlSettings} = require('./mysql_settings');
 let isAudioFile = (file) =>{ //returns true if the file arg is an audio file
     let isAudio = false;
     switch(path.extname(file)){
@@ -35,6 +37,9 @@ let isAudioFile = (file) =>{ //returns true if the file arg is an audio file
 
 
 const getAllFiles = function(dirPath, arrayOfFiles) {
+
+     
+
     let files = fs.readdirSync(dirPath);
   
     arrayOfFiles = arrayOfFiles || [];
@@ -45,10 +50,12 @@ const getAllFiles = function(dirPath, arrayOfFiles) {
       } else { //base case... a file was found
         if(isAudioFile(file)){ //if found file is a audio file TODO: check if it is a duplicate and ignore if dubplicate
         arrayOfFiles.push(path.join( dirPath, "/", file)); //then append the absolute path and add this path to the array
+        addAudioFileToDB(path.join( dirPath, "/", file));//add the file as a song row to the AllSongs table in the mysql cadence db
        }
       }
     });
 
+    
     return arrayOfFiles; //return the array of audio files
   }
 
