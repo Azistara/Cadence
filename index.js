@@ -4,13 +4,13 @@
 //import modules
 const {BrowserWindow} = require("electron-acrylic-window");
 const { setVibrancy } = require('electron-acrylic-window');
-const { app } = require('electron');
+const { app, ipcMain } = require('electron');
 const os = require ('os');
 const {setupDatabase} = require("./setup_database.js");
 const {loadMusicFolders} = require('./load_music.js');
 const {extractSongs} = require("./extract_songs.js");
 const {getMetadata} = require("./get_file_metadata");
-
+const {handleLoadAllSongs} = require('./handleLoadAllSongs.js');
 
 
 // window acrylic options object
@@ -29,7 +29,9 @@ const createWindow = () => {
     frame: true,
     webPreferences: { 
       nodeIntegration: true, //provide the js that is running in the window access to the node.js APIs
+      preload: 'C:/Users/cleve/Desktop/Cadence/preload.js' //expose the ipcRenderer.send method to the renderer process via  window.electronAPI
     },
+
     width: 1200,
     height: 1000,
     minHeight: 500,
@@ -41,9 +43,10 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
+  ipcMain.handle('load-all-songs', handleLoadAllSongs); //listen for user switching to the all songs page
   createWindow(); //creates a renderer process
   setupDatabase();  //setup the mysql database
-
+  
   if(os.platform() ==='win32'){ 
     extractSongs(loadMusicFolders()); //load all the file paths to every audio file on the user's system.
 
