@@ -5,7 +5,6 @@
 let songQueue = ["./resources/mp3s/Gmatters.m4a", "./resources/mp3s/MindBlown.m4a", "./resources/mp3s/Ouija.m4a", './resources/mp3s/test.mp3' ];
 var audio = new Audio(songQueue[0]);
 let playButton    =    document.getElementById("play-button");
-let pauseButton   =    document.getElementById("pause-button");
 let stopButton    =    document.getElementById('stop-button');
 let volumeButton  =    document.getElementById('volume-button');
 let volumeSlider  =    document.getElementById('volume-slider');
