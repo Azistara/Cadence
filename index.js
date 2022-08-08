@@ -29,7 +29,7 @@ const createWindow = () => {
     frame: true,
     webPreferences: { 
       nodeIntegration: true, //provide the js that is running in the window access to the node.js APIs
-      preload: 'C:/Users/cleve/Desktop/Cadence/preload.js' //expose the ipcRenderer.send method to the renderer process via  window.electronAPI
+      preload: 'C:/Users/cleve/Desktop/Cadence/preload.js' //expose the ipcRenderer.invoke method to the renderer process via  window.electronAPI
     },
 
     width: 1200,
@@ -43,9 +43,10 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
+  setupDatabase();  //setup the mysql database
   ipcMain.handle('load-all-songs', handleLoadAllSongs); //listen for user switching to the all songs page
   createWindow(); //creates a renderer process
-  setupDatabase();  //setup the mysql database
+ 
   
   if(os.platform() ==='win32'){ 
     extractSongs(loadMusicFolders()); //load all the file paths to every audio file on the user's system.

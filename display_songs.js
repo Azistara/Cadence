@@ -1,4 +1,5 @@
 
+
 let allSongsContainer = undefined;
 
 let displaySongMenu = (e) =>{
@@ -31,9 +32,16 @@ let createSongsList = async () =>{ //changes the min content to display all the 
     let songListContainer = document.createElement('div');
     songListContainer.id = "all-songs-container";
     songListContainer.classList.add('main-content');
-   
-    const result = await window.electronAPI.loadAllSongs(); //load the songs from the db through the main process (index.js) via handleLoadAllSongs.js
-        result.forEach(function(row) { //for each row create a container and add the song title the artist and the duration
+    let result;
+    try{
+         result = await window.electronAPI.loadAllSongs(); //load the songs from the db through the main process (index.js) via handleLoadAllSongs.js
+   }
+    catch(error){
+        console.log(error);
+        return;
+    }  
+    console.log(typeof result);
+            result.forEach((row) =>{ //for each row create a container and add the song title the artist and the duration
                 let currentSongContainer = document.createElement('div');
                 currentSongContainer.classList.add('individual-song');
                 //for the title
@@ -55,8 +63,10 @@ let createSongsList = async () =>{ //changes the min content to display all the 
                // currentSongContainer.addEventListener('click', ); TODO: figure out how to play the song
 
                
-               if(songListContainer.childElementCount === 0 || //if this is the first song to be added OR
-               songListContainer.lastChild.firstChild.innerText.substring(0,1).toUpperCase() !== row.title.substring(0,1).toUpperCase()){ // the current song starts with a different letter than the last added song
+               if( songListContainer.childElementCount === 0 || //if this is the first song to be added OR
+               songListContainer.lastChild.firstChild.innerText.substring(0,1).toUpperCase() !== row.title.substring(0,1).toUpperCase() // the current song starts with a different letter than the last added song
+               )
+               { 
                     let letterheader = document.createElement('h2'); //create letter header
                     letterheader.classList.add('letter-header');
                     letterheader.innerText = row.title.substring(0,1).toUpperCase(); //set its inner text to the first letter of the song title
@@ -65,14 +75,14 @@ let createSongsList = async () =>{ //changes the min content to display all the 
                //add the songContainer to the songListContainer
                songListContainer.appendChild(currentSongContainer);
         });
-        console.log(typeof songListContainer);
-   return songListContainer;
+
+   return songListContainer; 
 }
 
-let displayMusic = () =>{
+let displayMusic = async () =>{
    // if(document.getElementById('all-songs-container') !== undefined){ return;} //if we are already on the all songs page then do nothing.
     if(allSongsContainer === undefined){
-        allSongsContainer = createSongsList();
+        allSongsContainer = await createSongsList();
     }
         let mainContent =  document.getElementById('main-content');
          //display the songList div in front  of the main-content
