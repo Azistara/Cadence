@@ -2,8 +2,10 @@
 
 //HTMLMediaElement
 
-let songQueue = ["./resources/mp3s/Gmatters.m4a", "./resources/mp3s/MindBlown.m4a", "./resources/mp3s/Ouija.m4a", './resources/mp3s/test.mp3' ];
-var audio = new Audio(songQueue[0]);
+//let songQueue = ["./resources/mp3s/Gmatters.m4a", "./resources/mp3s/MindBlown.m4a", "./resources/mp3s/Ouija.m4a", './resources/mp3s/test.mp3' ];
+let songQueue = [];
+//var audio = new Audio(songQueue[0]);
+let audio;
 let playButton    =    document.getElementById("play-button");
 let stopButton    =    document.getElementById('stop-button');
 let volumeButton  =    document.getElementById('volume-button');
@@ -25,6 +27,8 @@ let fullScreenButton = document.getElementById('full-screen-button');
  let playMp3 = (path) => {
   if(path){
     audio = new Audio(path);
+    songQueue.push(path);
+    addSongToUIQueue(path);
   }
    //play the audio
     audio.play();
@@ -32,6 +36,7 @@ let fullScreenButton = document.getElementById('full-screen-button');
   playButton.removeEventListener('click', playMp3);
   playButton.addEventListener('click', pauseMp3);
   playButton.style.backgroundImage = "url('./resources/svg/media/az-pause.svg')";
+  
   };
 let pauseMp3 = () =>{
   audio.pause();
@@ -63,7 +68,9 @@ songQueue.forEach(song => {
   addSongToUIQueue(song);
 });
 }
-audio.addEventListener('ended', playNextSong);
+if(audio){
+audio.addEventListener('ended', playNextSong); //play next song in queue when current song finishes.
+}
 forwardButton.addEventListener('click', playNextSong);
 
 let playPreviousSong = () =>{
@@ -158,7 +165,7 @@ songQueue.forEach(song => {
 
 //END QUEUE FUNCTIONS
 
-let displaySearchBar = () =>{
+let toggleSearchBar = () =>{
   if(searchBar.style.visibility!=='visible')
   searchBar.style.visibility = 'visible';
   else{
@@ -166,7 +173,7 @@ let displaySearchBar = () =>{
   }
  
 };
-searchButton.addEventListener('click', displaySearchBar);
+searchButton.addEventListener('click', toggleSearchBar);
 
 let enterFullScreen = () =>{  //from: https://www.w3schools.com/howto/howto_js_fullscreen.asp
   let elem = document.documentElement;
