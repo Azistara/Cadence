@@ -3,6 +3,16 @@
 let allSongsContainer = undefined;
 
 
+let formatDuration = (duration) =>{ //converts song duration from seconds to minutes and seconds
+    let durationInSeconds = duration;
+    let durationInMinutes = (Math.floor(durationInSeconds / 60));
+    durationInSeconds = (Math.floor(durationInSeconds - (durationInMinutes*60))).toString();
+    let totalDuration = durationInMinutes.toString() + ":" + durationInSeconds.toString();
+    if(durationInSeconds === '0'){
+    totalDuration += '0';
+    }
+    return totalDuration;
+}
 
 let displaySongMenu = (e) =>{
     //display a menu of options
@@ -42,8 +52,10 @@ let createSongsList = async  () =>{ //changes the min content to display all the
         console.log(error);
         return;
     }  
-    console.log(typeof result);
             result.forEach((row) =>{ //for each row create a container and add the song title the artist and the duration
+                if(row.duration <= 10){
+                    return;
+                }
                 let currentSongContainer = document.createElement('div');
                 currentSongContainer.classList.add('individual-song');
                 //for the title
@@ -59,11 +71,10 @@ let createSongsList = async  () =>{ //changes the min content to display all the
                 //for the duration
                 let songDuration = document.createElement('p');
                 songDuration.classList.add('individual-song-duration');
-                songDuration.innerText = row.duration;
+                songDuration.innerText = formatDuration(row.duration);
                 currentSongContainer.appendChild(songDuration);
                 //add an event listener to the song container
-                currentSongContainer.addEventListener('click', playMp3(row.filePath)); // TODO: figure out how to play the song
-                
+                currentSongContainer.addEventListener('click', function(){playMp3(row.filePath);}); // TODO: figure out how to play the song
                
                if( songListContainer.childElementCount === 0 || //if this is the first song to be added OR
                songListContainer.lastChild.firstChild.innerText.substring(0,1).toUpperCase() !== row.title.substring(0,1).toUpperCase() // the current song starts with a different letter than the last added song
