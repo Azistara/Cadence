@@ -21,7 +21,7 @@ let addAudioFileToDB = async (audioPath) =>{ //adds a file's metadata and absolu
     let metadata = await getMetadata(audioPath);
 
     if( (metadata?.format?.duration <= 5) ){return;} //this file is less than 5 seconds long and we will not add it to the database
-
+       
     else{ //insert the song as a row into the AllSongs table
         //get all the metadata out of object 
         let Duration =  metadata?.format?.duration || metadata?.native?.duration || metadata?.common?.duration || -1;
