@@ -22,7 +22,10 @@ let fullScreenButton = document.getElementById('full-screen-button');
 
 //START CONTROL PANEL BUTTONS
 
-let playMp3 = () => {
+ let playMp3 = (path) => {
+  if(path){
+    audio = new Audio(path);
+  }
    //play the audio
     audio.play();
   //change the audio button to a pause button
