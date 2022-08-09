@@ -5,7 +5,7 @@
 //let songQueue = ["./resources/mp3s/Gmatters.m4a", "./resources/mp3s/MindBlown.m4a", "./resources/mp3s/Ouija.m4a", './resources/mp3s/test.mp3' ];
 let songQueue = [];
 //var audio = new Audio(songQueue[0]);
-let audio;
+let audio = undefined;
 let playButton    =    document.getElementById("play-button");
 let stopButton    =    document.getElementById('stop-button');
 let volumeButton  =    document.getElementById('volume-button');
@@ -14,6 +14,7 @@ let forwardButton =    document.getElementById("forward-button");
 let prevButton    =    document.getElementById('prev-button');
 let shuffleButton =    document.getElementById('shuffle-button');
 let uiQueue       =    document.getElementById('queue-list');
+let clearQueueButton = document.getElementById('clear-queue');
 volumeSlider.style.display = 'none';
 
 let searchButton = document.getElementsByClassName('search-button')[0]; 
@@ -26,9 +27,16 @@ let fullScreenButton = document.getElementById('full-screen-button');
 
  let playMp3 = (path) => {
   if(path){
+    if(audio !==undefined){
+    audio.setAttribute('src', path); //set the current song to the song at the front of the queue
+    audio.load(); //load new song so that it doesn't play the old song.
+    }
+    else{//no audio has been set up yet.
     audio = new Audio(path);
+    }
     songQueue.push(path);
     addSongToUIQueue(path);
+    
   }
    //play the audio
     audio.play();
@@ -162,6 +170,12 @@ const queueItem = document.createElement('div');
 songQueue.forEach(song => {
   addSongToUIQueue(song);
 });
+
+let clearQueue = () =>{
+  songQueue = [];
+  uiQueue.innerHTML="";
+}
+clearQueueButton.addEventListener('click', clearQueue);
 
 //END QUEUE FUNCTIONS
 
