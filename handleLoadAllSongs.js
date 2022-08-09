@@ -23,7 +23,7 @@ const handleLoadAllSongs = async () => {
         return response;
     }
     catch (error){
-        console.log("error occurred querying db from main process" + error); 
+        console.log( error); 
         return;
     }
 }        
