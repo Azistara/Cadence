@@ -383,3 +383,30 @@ figcaption{
 #now-playing-button{
     background-image: url("./resources/svg/media/frame.svg");
 }
+
+/* START all songs css */
+#all-songs-container{
+    width: 100%;
+    overflow:scroll;
+    position: relative;
+    right: 7%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#all-songs-container::-webkit-scrollbar{
+    display: none;
+}
+
+.individual-song{
+    margin-bottom: 10px;
+    width: inherit;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: darkslategrey;
+}
+
+.individual-song:nth-child(even) {
+    background-color: rgb(67, 64, 64);
+}
