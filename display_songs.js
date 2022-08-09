@@ -2,6 +2,8 @@
 
 let allSongsContainer = undefined;
 
+
+
 let displaySongMenu = (e) =>{
     //display a menu of options
     //1. push song to queue
@@ -26,7 +28,7 @@ let renameSong = (songID) =>{
     //update the div so that the <p>title</p> echos what the user renamed the song to
 }
 
-let createSongsList = async () =>{ //changes the min content to display all the songs in the database
+let createSongsList = async  () =>{ //changes the min content to display all the songs in the database
     
     // create the main container for all the songs
     let songListContainer = document.createElement('div');
@@ -60,8 +62,8 @@ let createSongsList = async () =>{ //changes the min content to display all the 
                 songDuration.innerText = row.duration;
                 currentSongContainer.appendChild(songDuration);
                 //add an event listener to the song container
-               // currentSongContainer.addEventListener('click', ); TODO: figure out how to play the song
-
+                currentSongContainer.addEventListener('click', playMp3(row.filePath)); // TODO: figure out how to play the song
+                
                
                if( songListContainer.childElementCount === 0 || //if this is the first song to be added OR
                songListContainer.lastChild.firstChild.innerText.substring(0,1).toUpperCase() !== row.title.substring(0,1).toUpperCase() // the current song starts with a different letter than the last added song
