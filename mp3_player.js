@@ -42,7 +42,7 @@ let pauseMp3 = () =>{
   audio.pause();
   //change the audio button to a play button
   playButton.removeEventListener('click', pauseMp3);
-  playButton.addEventListener('click', playMp3);
+  playButton.addEventListener('click', function(){playMp3();});
   playButton.style.backgroundImage = "url('./resources/svg/media/az-play.svg')";
 };
 playButton.addEventListener('click', playMp3);
