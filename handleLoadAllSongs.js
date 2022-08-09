@@ -1,7 +1,7 @@
 const connection = require("./db_connection.js");
 
 const query = async () => {
-    let sql = 'SELECT * FROM allsongs';
+    let sql = 'SELECT * FROM allsongs ORDER BY title';
 return new Promise((resolve, reject)=>{
     connection.query(sql,  (error, results)=>{
         if(error){
