@@ -32,7 +32,7 @@ let fullScreenButton = document.getElementById('full-screen-button');
     audio.load(); //load new song so that it doesn't play the old song.
     }
     else{//no audio has been set up yet.
-    audio = new Audio(path);
+    audio = new Audio(path); //html media object
     }
     songQueue.push(path);
     addSongToUIQueue(path);

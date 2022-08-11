@@ -89,6 +89,7 @@ header{
     color:white;
     height: 90%;
     width: 15%;
+    min-width: 15%;
     border: none;
     display: flex;
     flex-direction: column;

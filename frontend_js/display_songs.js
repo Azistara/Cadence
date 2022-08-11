@@ -53,7 +53,7 @@ let createSongsList = async  () =>{ //changes the min content to display all the
         return;
     }  
             result.forEach((row) =>{ //for each row create a container and add the song title the artist and the duration
-                if(row.duration <= 10){
+                if(row.duration <= 10){ //TODO: delete this to allow for songs under 10 seconds long.
                     return;
                 }
                 let currentSongContainer = document.createElement('div');

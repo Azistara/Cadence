@@ -6,12 +6,12 @@ const {BrowserWindow} = require("electron-acrylic-window");
 const { setVibrancy } = require('electron-acrylic-window');
 const { app, ipcMain } = require('electron');
 const os = require ('os');
-const {setupDatabase} = require("./setup_database.js");
-const {loadMusicFolders} = require('./load_music.js');
-const {extractSongs} = require("./extract_songs.js");
-const {getMetadata} = require("./get_file_metadata");
-const {handleLoadAllSongs} = require('./handleLoadAllSongs.js');
-
+const {setupDatabase} = require("./backend_js/setup_database.js");
+const {loadMusicFolders} = require('./backend_js/load_music.js');
+const {extractSongs} = require("./backend_js/extract_songs.js");
+const {getMetadata} = require("./backend_js/get_file_metadata");
+const {handleLoadAllSongs} = require('./backend_js/handleLoadAllSongs.js');
+const path = require('path');
 
 // window acrylic options object
 op = {
@@ -29,10 +29,10 @@ const createWindow = () => {
     frame: true,
     webPreferences: { 
       nodeIntegration: true, //provide the js that is running in the window access to the node.js APIs
-      preload: 'C:/Users/cleve/Desktop/Cadence/preload.js' //expose the ipcRenderer.invoke method to the renderer process via  window.electronAPI
+      preload:  path.join(__dirname, 'backend_js', 'preload.js') //expose the ipcRenderer.invoke method to the renderer process via  window.electronAPI
     },
 
-    width: 1200,
+    width: 1200, 
     height: 1000,
     minHeight: 500,
     minWidth: 500,

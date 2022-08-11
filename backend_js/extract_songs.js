@@ -9,24 +9,20 @@ let isAudioFile = (file) =>{ //returns true if the file arg is an audio file
     switch(path.extname(file)){
         
         case '.mpeg' : //.mp3
-            isAudio = true;
-            break;
+        
         case '.mp3' : //.mp3
-            isAudio = true;
-            break;
+        
         case '.wav' : //.wav
-            isAudio = true;
-            break;
+           
         case '.ogg' : //.ogg
-            isAudio =  true;
-            break;
+          
         case '.aac' : //.aac
-            isAudio =  true;
-            break;
+     
         case '.m4a' : //.m4a 
-            isAudio =  true;
-            break;
+            
         case '.flac' : //.flac 
+          
+        case '.m4r' : //.m4r 
             isAudio =  true;
             break;
         default:
