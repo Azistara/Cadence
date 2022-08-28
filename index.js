@@ -11,6 +11,7 @@ const {loadMusicFolders} = require('./backend_js/load_music.js');
 const {extractSongs} = require("./backend_js/extract_songs.js");
 const {getMetadata} = require("./backend_js/get_file_metadata");
 const {handleLoadAllSongs} = require('./backend_js/handleLoadAllSongs.js');
+const {handleSearch} = require("./backend_js/handle_search");
 const path = require('path');
 
 // window acrylic options object
@@ -45,6 +46,7 @@ const createWindow = () => {
 app.whenReady().then(() => {
   setupDatabase();  //setup the mysql database
   ipcMain.handle('load-all-songs', handleLoadAllSongs); //listen for user switching to the all songs page
+  ipcMain.handle('search-all-songs', async (event, searchTerm) => { const result = await handleSearch(searchTerm); return result;}); //listen for user searching all songs
   createWindow(); //creates a renderer process
  
   
