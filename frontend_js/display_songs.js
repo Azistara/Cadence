@@ -38,7 +38,7 @@ let renameSong = (songID) =>{
     //update the div so that the <p>title</p> echos what the user renamed the song to
 }
 
-let createSongsList = async  () =>{ //changes the min content to display all the songs in the database
+let createSongsList = async  (isSearch = false) =>{ //changes the min content to display all the songs in the database if isSearch is false otherwise it displays the search results 
     
     // create the main container for all the songs
     let songListContainer = document.createElement('div');
@@ -46,7 +46,8 @@ let createSongsList = async  () =>{ //changes the min content to display all the
     songListContainer.classList.add('main-content');
     let result;
     try{
-         result = await window.electronAPI.loadAllSongs(); //load the songs from the db through the main process (index.js) via handleLoadAllSongs.js
+        console.log("searchbar value: " + searchBar.value);
+         result = (isSearch) ? await window.electronAPI.searchAllSongs(searchBar.value) : await window.electronAPI.loadAllSongs(); //load the songs from the db through the main process (index.js) via handleLoadAllSongs.js
    }
     catch(error){
         console.log(error);
@@ -92,10 +93,10 @@ let createSongsList = async  () =>{ //changes the min content to display all the
    return songListContainer; 
 }
 
-let displayMusic = async () =>{
+let displayMusic = async (isSearch) =>{
    // if(document.getElementById('all-songs-container') !== undefined){ return;} //if we are already on the all songs page then do nothing.
     if(allSongsContainer === undefined){
-        allSongsContainer = await createSongsList();
+        allSongsContainer = await createSongsList(isSearch);
     }
         let mainContent =  document.getElementById('main-content');
          //display the songList div in front  of the main-content
@@ -105,5 +106,10 @@ let displayMusic = async () =>{
 }
 
 const musicButton = document.getElementById('music-button');
+// const searchBar = document.getElementById('search-bar');
 musicButton.addEventListener('click', displayMusic);
-
+searchBar.addEventListener('keyup', (event) => { 
+    if(event.key === "Enter"){
+        displayMusic(true);
+    }
+    });
