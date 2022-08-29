@@ -6,11 +6,13 @@ let allSongsContainer = undefined;
 let formatDuration = (duration) =>{ //converts song duration from seconds to minutes and seconds
     let durationInSeconds = duration;
     let durationInMinutes = (Math.floor(durationInSeconds / 60));
-    durationInSeconds = (Math.floor(durationInSeconds - (durationInMinutes*60))).toString();
+    durationInSeconds = (Math.floor(durationInSeconds - (durationInMinutes*60)));
+    durationInSeconds = (durationInSeconds < 10 && durationInSeconds > 0) ?  "0" + durationInSeconds.toString() : durationInSeconds.toString();
     let totalDuration = durationInMinutes.toString() + ":" + durationInSeconds.toString();
     if(durationInSeconds === '0'){
     totalDuration += '0';
     }
+    
     return totalDuration;
 }
 
@@ -115,7 +117,6 @@ let displayMusic = async (isSearch) =>{
 }
 
 const musicButton = document.getElementById('music-button');
-// const searchBar = document.getElementById('search-bar');
 musicButton.addEventListener('click', () => {displayMusic(false);});
 
 searchBar.addEventListener('keyup', (event) => { 
