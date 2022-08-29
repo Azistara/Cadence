@@ -40,7 +40,7 @@ let addAudioFileToDB = async (audioPath) =>{ //adds a file's metadata and absolu
         sqlConnection.query(sql, [''+audioPath+''], function (error, results, fields) { //launch the prepared mysqli INSERT query
             if (error) {console.log("Error in inserting song." + error.stack); } 
             else{
-            console.log("audio successfully uploaded to the db. \n");
+          //  console.log("audio successfully uploaded to the db. \n");
 
              sqlConnection.end(function(err){ //close the connection 
                 if(err){

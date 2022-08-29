@@ -52,7 +52,6 @@ app.whenReady().then(() => {
   
   if(os.platform() ==='win32'){ 
     extractSongs(loadMusicFolders()); //load all the file paths to every audio file on the user's system.
-
     console.log(getMetadata("")); //HAVE ZURIEL PUT AN ITUNES FILE PATH IN THAT FUNCTION CALL as a test
   }
   else if(os.platform() === 'linux'){ }//TODO: get all music from system files for user on linux

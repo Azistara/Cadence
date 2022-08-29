@@ -2,8 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const {addAudioFileToDB} = require('./push_audio_to_db');
-var mysql = require('mysql');
-const {mysqlSettings} = require('./mysql_settings');
+const {musicIsLoaded} = require("./music_already_loaded");
+
 let isAudioFile = (file) =>{ //returns true if the file arg is an audio file
     let isAudio = false;
     switch(path.extname(file)){
@@ -61,7 +61,12 @@ const getAllFiles = function(dirPath, arrayOfFiles) {
 
 //loop through the passed in path list and return an array of all absolute paths to all songs found in any of the paths passed in. 
 
-let extractSongs = (pathArray) =>{
+let extractSongs = async (pathArray) =>{
+    let musicLoaded = await musicIsLoaded();
+    if(musicLoaded){
+      return;
+    }
+    
     let audioFiles = [];
     if(pathArray.length === 0 || pathArray === null){
         console.log("No songs in music library...");
