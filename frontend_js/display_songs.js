@@ -45,6 +45,7 @@ let createSongsList = async  (isSearch = false) =>{ //changes the min content to
     songListContainer.id = "all-songs-container";
     songListContainer.classList.add('main-content');
     let result;
+    
     try{
         console.log("searchbar value: " + searchBar.value);
          result = (isSearch) ? await window.electronAPI.searchAllSongs(searchBar.value) : await window.electronAPI.loadAllSongs(); //load the songs from the db through the main process (index.js) via handleLoadAllSongs.js
@@ -95,6 +96,10 @@ let createSongsList = async  (isSearch = false) =>{ //changes the min content to
 
 let displayMusic = async (isSearch) =>{
    // if(document.getElementById('all-songs-container') !== undefined){ return;} //if we are already on the all songs page then do nothing.
+   if(isSearch){
+    allSongsContainer = undefined; //if this is a new search then get rid of the old search results and then repopulate it with the new search results
+   }
+
     if(allSongsContainer === undefined){
         allSongsContainer = await createSongsList(isSearch);
     }
