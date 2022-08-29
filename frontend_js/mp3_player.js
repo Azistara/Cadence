@@ -135,9 +135,13 @@ const queueItem = document.createElement('div');
   queueItem.classList.add('queue-item');
   //create the songTitle
   const songTitle = document.createElement("p");
-
   //erase the first 17 characters from the new song string
-  songTitleText = newSong.substring(17, newSong.length-4);
+  songTitleText = newSong.substring(20, newSong.length-4);
+  console.log(songTitleText);
+  const regex = /[^a-zA-Z\d\s:]/g;
+  songTitleText = songTitleText.replace(regex, " ");
+  console.log(songTitleText);
+  
   const node = document.createTextNode(songTitleText);
   songTitle.appendChild(node);
   
