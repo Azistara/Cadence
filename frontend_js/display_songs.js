@@ -38,7 +38,7 @@ let renameSong = (songID) =>{
     //update the div so that the <p>title</p> echos what the user renamed the song to
 }
 
-let createSongsList = async  (isSearch = false) =>{ //changes the min content to display all the songs in the database if isSearch is false otherwise it displays the search results 
+let createSongsList = async  (isSearch) =>{ //changes the min content to display all the songs in the database if isSearch is false otherwise it displays the search results 
     
     // create the main container for all the songs
     let songListContainer = document.createElement('div');
@@ -95,14 +95,18 @@ let createSongsList = async  (isSearch = false) =>{ //changes the min content to
 }
 
 let displayMusic = async (isSearch) =>{
-   // if(document.getElementById('all-songs-container') !== undefined){ return;} //if we are already on the all songs page then do nothing.
+    let allsongs =document.getElementById('all-songs-container');
+    if(allsongs){
+        allsongs.remove();
+}
    if(isSearch){
     allSongsContainer = undefined; //if this is a new search then get rid of the old search results and then repopulate it with the new search results
+    allSongsContainer = await createSongsList(isSearch);
+   }
+   else{
+    allSongsContainer = await createSongsList(isSearch);
    }
 
-    if(allSongsContainer === undefined){
-        allSongsContainer = await createSongsList(isSearch);
-    }
         let mainContent =  document.getElementById('main-content');
          //display the songList div in front  of the main-content
         document.getElementsByTagName('main')[0].insertBefore(allSongsContainer, mainContent);
@@ -112,7 +116,8 @@ let displayMusic = async (isSearch) =>{
 
 const musicButton = document.getElementById('music-button');
 // const searchBar = document.getElementById('search-bar');
-musicButton.addEventListener('click', displayMusic);
+musicButton.addEventListener('click', () => {displayMusic(false);});
+
 searchBar.addEventListener('keyup', (event) => { 
     if(event.key === "Enter"){
         displayMusic(true);
