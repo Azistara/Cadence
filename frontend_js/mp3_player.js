@@ -1,11 +1,13 @@
 //play mp3s
 
-//HTMLMediaElement
 
-//let songQueue = ["./resources/mp3s/Gmatters.m4a", "./resources/mp3s/MindBlown.m4a", "./resources/mp3s/Ouija.m4a", './resources/mp3s/test.mp3' ];
+
+
 let songQueue = [];
-//var audio = new Audio(songQueue[0]);
-let audio = undefined;
+
+//HTMLMediaElement
+let audio = undefined; //the one and only audio object. It is global and referenced by multiple browser side js files so be careful with it!!!
+
 let playButton    =    document.getElementById("play-button");
 let stopButton    =    document.getElementById('stop-button');
 let volumeButton  =    document.getElementById('volume-button');
@@ -15,24 +17,51 @@ let prevButton    =    document.getElementById('prev-button');
 let shuffleButton =    document.getElementById('shuffle-button');
 let uiQueue       =    document.getElementById('queue-list');
 let clearQueueButton = document.getElementById('clear-queue');
-volumeSlider.style.display = 'none';
-
-let searchButton = document.getElementsByClassName('search-button')[0]; 
-let searchBar = document.getElementById('search-bar');
+let progressEl    =    document.getElementById("seek-bar");
+let mouseDownOnSlider = false; //keep track of when mouse is selecting slider
+volumeSlider.style.display = 'none'; 
+let searchButton  =    document.getElementsByClassName('search-button')[0]; 
+let searchBar     =    document.getElementById('search-bar');
 let fullScreenButton = document.getElementById('full-screen-button');
-
-
-
+let currentPlayTime = document.getElementById("now-playing-timestamp");
+let currentTimeLeft = document.getElementById("now-playing-time-left");
 //START CONTROL PANEL BUTTONS
 
  let playMp3 = (path) => {
   if(path){
     if(audio !==undefined){
-    audio.setAttribute('src', path); //set the current song to the song at the front of the queue
-    audio.load(); //load new song so that it doesn't play the old song.
+      audio.setAttribute('src', path); //set the current song to the song at the front of the queue
+      audio.load(); //load new song so that it doesn't play the old song.
     }
     else{//no audio has been set up yet.
-    audio = new Audio(path); //html media object
+        audio = new Audio(path); //html media object
+
+        //configure the audio global object and the seekbar
+        audio.addEventListener("loadeddata", () => {
+          progressEl.value = 0;
+        });
+
+        audio.addEventListener("timeupdate", () => { //update the seek bar based on the audio's current time in playback
+          if (!mouseDownOnSlider) {
+            progressEl.value = audio.currentTime / audio.duration * 100;
+            currentPlayTime.innerText = formatDuration(audio.currentTime);
+            currentTimeLeft.innerText = formatDuration(audio.duration - audio.currentTime);
+          }
+        });
+
+        progressEl.addEventListener("change", () => {  //update the song's position when the user uses the slider.
+          const pct = progressEl.value / 100;
+          audio.currentTime = (audio.duration || 0) * pct;
+        });
+
+        progressEl.addEventListener("mousedown", () => { //just to take care of a bug where user hovers over slider and activates it.
+          mouseDownOnSlider = true;
+        });
+
+        progressEl.addEventListener("mouseup", () => {
+          mouseDownOnSlider = false;
+        });
+
     }
     songQueue.push(path);
     addSongToUIQueue(path);
