@@ -4,16 +4,16 @@ let allSongsContainer = undefined;
 
 
 let formatDuration = (duration) =>{ //converts song duration from seconds to minutes and seconds
-    let durationInSeconds = duration;
-    let durationInMinutes = (Math.floor(durationInSeconds / 60));
-    durationInSeconds = (Math.floor(durationInSeconds - (durationInMinutes*60)));
-    durationInSeconds = (durationInSeconds < 10 && durationInSeconds > 0) ?  "0" + durationInSeconds.toString() : durationInSeconds.toString();
-    let totalDuration = durationInMinutes.toString() + ":" + durationInSeconds.toString();
-    if(durationInSeconds === '0'){
-    totalDuration += '0';
-    }
-    
-    return totalDuration;
+        let durationInSeconds = duration;
+        let durationInMinutes = (Math.floor(durationInSeconds / 60));
+        durationInSeconds = (Math.floor(durationInSeconds - (durationInMinutes*60)));
+        durationInSeconds = (durationInSeconds < 10 && durationInSeconds > 0) ?  "0" + durationInSeconds.toString() : durationInSeconds.toString();
+        let totalDuration = durationInMinutes.toString() + ":" + durationInSeconds.toString();
+        if(durationInSeconds === '0'){
+        totalDuration += '0';
+        }
+        
+        return totalDuration;
 }
 
 let displaySongMenu = (e) =>{
@@ -50,7 +50,9 @@ let createSongsList = async  (isSearch) =>{ //changes the min content to display
     
     try{
         console.log("searchbar value: " + searchBar.value);
-         result = (isSearch) ? await window.electronAPI.searchAllSongs(searchBar.value) : await window.electronAPI.loadAllSongs(); //load the songs from the db through the main process (index.js) via handleLoadAllSongs.js
+         result = (isSearch) ? 
+         await window.electronAPI.searchAllSongs(searchBar.value) :  //load the songs from the db through the main process (index.js) via handle_search.js
+         await window.electronAPI.loadAllSongs(); //load the songs from the db through the main process (index.js) via handleLoadAllSongs.js
    }
     catch(error){
         console.log(error);
