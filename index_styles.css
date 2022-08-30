@@ -287,6 +287,32 @@ figcaption{
   
 }
 
+#control-panel-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#seek-bar{
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+#seek-bar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+   
+}
+
+#now-playing-time-left{
+    margin-top: 50px;
+    margin-left: 20px;
+    color: white;
+}
+
 #control-panel{
     position: absolute;
     bottom: 0;
