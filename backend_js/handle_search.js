@@ -3,9 +3,10 @@ const connection = require("./db_connection.js");
 const query = async (searchTerm) => {
 
   let sql = "SELECT * FROM allsongs WHERE title  LIKE  '%" + searchTerm + "%'" + 
-   " OR artist LIKE '%" + searchTerm + "%' OR album LIKE '%" + searchTerm + "%' OR genre LIKE '%" + searchTerm + "%' OR albumartist LIKE '%" + searchTerm + "%'";
-   console.log(sql);
-  return new Promise((resolve, reject) => {
+   " OR artist LIKE '%" + searchTerm + "%' OR album LIKE '%" + searchTerm + 
+   "%' OR genre LIKE '%" + searchTerm + "%' OR albumartist LIKE '%" + searchTerm + "%' ORDER BY title";
+ 
+   return new Promise((resolve, reject) => {
     connection.query(sql, (error, results) => {
       if (error) {
         return reject(error);
