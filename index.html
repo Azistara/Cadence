@@ -97,16 +97,21 @@
             </div>
         </div>
         
-        <section id="control-panel">
-            
-            <button id="stop-button" class="control-button"></button>
-            <button id="shuffle-button" class="control-button"></button>
-            <button id="prev-button" class="control-button"></button>
-            <button id="play-button" class="control-button"></button>
-            <button id="forward-button" class="control-button"></button>
-            <button id="repeat-button" class="control-button"></button>
-            <button id="volume-button" class="control-button"></button>
-            <input type="range" min="0" max="100" value="50" id="volume-slider">
+        <section id="control-panel-container">
+            <div id="seek-bar-container">
+                <input type="range" id="seek-bar" min=0 max=99>
+                <p id="now-playing-time-left">2:02</p>
+            </div>
+            <div id="control-panel">
+                <button id="stop-button" class="control-button"></button>
+                <button id="shuffle-button" class="control-button"></button>
+                <button id="prev-button" class="control-button"></button>
+                <button id="play-button" class="control-button"></button>
+                <button id="forward-button" class="control-button"></button>
+                <button id="repeat-button" class="control-button"></button>
+                <button id="volume-button" class="control-button"></button>
+                <input type="range" min="0" max="100" value="50" id="volume-slider">
+            </div>
         </section>
        
         <section id="supplementary-controls">
