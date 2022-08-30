@@ -64,7 +64,7 @@ let currentTimeLeft = document.getElementById("now-playing-time-left");
 
     }
     songQueue.push(path);
-    addSongToUIQueue(path);
+    addSongToUIQueue(path, songQueue.length);
     
   }
    //play the audio
@@ -75,6 +75,9 @@ let currentTimeLeft = document.getElementById("now-playing-time-left");
   playButton.style.backgroundImage = "url('./resources/svg/media/az-pause.svg')";
   
   };
+
+
+
 let pauseMp3 = () =>{
   audio.pause();
   //change the audio button to a play button
@@ -90,6 +93,7 @@ let stopMp3 = () =>{
   audio.currentTime = 0; //reset to beginning of the song
 }
 stopButton.addEventListener('click', stopMp3);
+
 
 let playNextSong = () => {
   songQueue.push(songQueue.shift()); //put finished song at end of queue
@@ -158,10 +162,11 @@ volumeSlider.oninput = function() {audio.volume =  (volumeSlider.value / 100); }
 
 //START QUEUE FUNCTIONS
 
-let addSongToUIQueue = (newSong) =>{
+let addSongToUIQueue = (newSong, index) =>{
   //create the container
 const queueItem = document.createElement('div');
-  queueItem.classList.add('queue-item');
+queueItem.classList.add('queue-item');
+queueItem.id = "queue-item-" + index;
   //create the songTitle
   const songTitle = document.createElement("p");
   //erase the first 17 characters from the new song string
@@ -190,18 +195,30 @@ const queueItem = document.createElement('div');
     songDuration.appendChild(node2);
 };
 
-  //add the title and duration to the queueItem
+  //create the delete button
+let deleteButton = document.createElement("button");
+deleteButton.classList.add("queue-delete-button");
+deleteButton.innerHTML = "X";
+deleteButton.addEventListener("click", () =>{ 
+document.getElementById(`queue-item-${index}`).remove(); //remove the element from the uiqueue
+songQueue.splice(index, 1); //remove the element from the songQueue
+
+});
+
+  //add the title and duration and delete button to the queueItem
   queueItem.appendChild(songTitle);
   queueItem.appendChild(songDuration);
-
+  queueItem.appendChild(deleteButton);
   // add queueItem to UI queue
-  uiQueue.appendChild(queueItem);
+  uiQueue.insertBefore(queueItem, uiQueue.firstElementChild);
 
 }
 
 //add all songs in js songQueue to UI queue
+let songIndex = 0;
 songQueue.forEach(song => {
-  addSongToUIQueue(song);
+  addSongToUIQueue(song, index);
+  index++;
 });
 
 let clearQueue = () =>{

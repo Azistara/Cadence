@@ -80,7 +80,7 @@ let createSongsList = async  (isSearch) =>{ //changes the min content to display
                 songDuration.innerText = formatDuration(row.duration);
                 currentSongContainer.appendChild(songDuration);
                 //add an event listener to the song container
-                currentSongContainer.addEventListener('click', function(){playMp3(row.filePath);}); // TODO: figure out how to play the song
+                currentSongContainer.addEventListener('click', function(){playMp3(row.filePath);}); 
                
                if( songListContainer.childElementCount === 0 || //if this is the first song to be added OR
                songListContainer.lastChild.firstChild.innerText.substring(0,1).toUpperCase() !== row.title.substring(0,1).toUpperCase() // the current song starts with a different letter than the last added song

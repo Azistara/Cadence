@@ -92,8 +92,7 @@ header{
     min-width: 15%;
     border: none;
     display: flex;
-    flex-direction: column;
-    justify-content: first baseline;
+    flex-direction:column;
     overflow-y: hidden;
 }
 
@@ -130,10 +129,25 @@ header{
     background-color: grey;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .queue-item:nth-child(even) {
+    background-color: rgb(67, 64, 64);
+}
+
+.queue-delete-button{
+height: fit-content;
+width: fit-content;
+background-color: grey;
+color: white;
+border: none;
+margin-bottom: 9px;
+margin-left: 3px;
+}
+
+.queue-item:nth-child(even) > .queue-delete-button {
     background-color: rgb(67, 64, 64);
 }
 
