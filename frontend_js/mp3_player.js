@@ -121,7 +121,7 @@ let playPreviousSong = () =>{
   songQueue.unshift(songQueue.pop()); //move last song to front of queue
   audio.setAttribute('src', songQueue[0]); //set the current song to the song at the front of the queue
   audio.load(); //load new song so that it doesn't play the old song.
-  playMp3(songQueue[0]); //start playing the current song
+  playMp3(); //start playing the current song
   //clear the queue
   while (uiQueue.firstChild) {
     uiQueue.removeChild(uiQueue.lastChild);

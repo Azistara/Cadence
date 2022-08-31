@@ -1,7 +1,7 @@
 const connection = require("./db_connection.js");
 
 const query = async (searchTerm) => {
-
+  //return all search results that match song's title, artist album or album artist
   let sql = "SELECT * FROM allsongs WHERE title  LIKE  '%" + searchTerm + "%'" + 
    " OR artist LIKE '%" + searchTerm + "%' OR album LIKE '%" + searchTerm + 
    "%' OR genre LIKE '%" + searchTerm + "%' OR albumartist LIKE '%" + searchTerm + "%' ORDER BY title";
