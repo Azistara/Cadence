@@ -34,6 +34,7 @@ let currentTimeLeft = document.getElementById("now-playing-time-left");
       audio.load(); //load new song so that it doesn't play the old song.
     }
     else{//no audio has been set up yet.
+      //SET UP THE AUDIO OBJECT
         audio = new Audio(path); //html media object
 
         //configure the audio global object and the seekbar
@@ -62,8 +63,12 @@ let currentTimeLeft = document.getElementById("now-playing-time-left");
           mouseDownOnSlider = false;
         });
 
+        if(audio){
+          audio.addEventListener('ended', () => {playNextSong(); }); //play next song in queue when current song finishes.
+          }
+        //END SETUP THE AUDIO OBJECT
     }
-    songQueue.push(path);
+    songQueue.push(path); //push the song that is now playing into the 
     addSongToUIQueue(path, songQueue.length);
     
   }
@@ -72,7 +77,7 @@ let currentTimeLeft = document.getElementById("now-playing-time-left");
   //change the audio button to a pause button
   playButton.removeEventListener('click', playMp3);
   playButton.addEventListener('click', pauseMp3);
-  playButton.style.backgroundImage = "url('./resources/svg/media/az-pause.svg')";
+  playButton.style.backgroundImage = "url('./resources/svg/media/az-pause.svg')"; //toggle display to pause button 
   
   };
 
@@ -83,7 +88,7 @@ let pauseMp3 = () =>{
   //change the audio button to a play button
   playButton.removeEventListener('click', pauseMp3);
   playButton.addEventListener('click', function(){playMp3();});
-  playButton.style.backgroundImage = "url('./resources/svg/media/az-play.svg')";
+  playButton.style.backgroundImage = "url('./resources/svg/media/az-play.svg')"; //toggle the button to display a play arrow now
 };
 playButton.addEventListener('click', playMp3);
 
@@ -109,16 +114,14 @@ songQueue.forEach(song => {
   addSongToUIQueue(song);
 });
 }
-if(audio){
-audio.addEventListener('ended', playNextSong); //play next song in queue when current song finishes.
-}
+
 forwardButton.addEventListener('click', playNextSong);
 
 let playPreviousSong = () =>{
   songQueue.unshift(songQueue.pop()); //move last song to front of queue
   audio.setAttribute('src', songQueue[0]); //set the current song to the song at the front of the queue
   audio.load(); //load new song so that it doesn't play the old song.
-  playMp3(); //start playing the current song
+  playMp3(songQueue[0]); //start playing the current song
   //clear the queue
   while (uiQueue.firstChild) {
     uiQueue.removeChild(uiQueue.lastChild);
@@ -129,6 +132,8 @@ songQueue.forEach(song => {
 });
 };
 prevButton.addEventListener('click', playPreviousSong);
+
+
 
 function shuffleArray(array) {  //durstenfeld shuffle algorithm https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   for (var i = array.length - 1; i > 0; i--) {
@@ -163,6 +168,7 @@ volumeSlider.oninput = function() {audio.volume =  (volumeSlider.value / 100); }
 //START QUEUE FUNCTIONS
 
 let addSongToUIQueue = (newSong, index) =>{
+  
   //create the container
 const queueItem = document.createElement('div');
 queueItem.classList.add('queue-item');
@@ -210,7 +216,8 @@ songQueue.splice(index, 1); //remove the element from the songQueue
   queueItem.appendChild(songDuration);
   queueItem.appendChild(deleteButton);
   // add queueItem to UI queue
-  uiQueue.insertBefore(queueItem, uiQueue.firstElementChild);
+  uiQueue.insertBefore(queueItem, uiQueue.firstElementChild); //TODO: fix the uiQueue layout so that the header or album art/playlist art does not
+  //get pushed down when adding queue items.
 
 }
 
