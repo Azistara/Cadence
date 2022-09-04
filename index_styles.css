@@ -275,6 +275,20 @@ figcaption{
   
 }
 
+@media only screen and (max-width: 900px){
+    #now-playing-title{
+        display: none;
+    }
+    #now-playing-timestamp{
+        display: none;
+    }
+
+  #main-nav >  .nav-button{
+        height: 10px;
+        width: 10px;
+    }
+
+}
 
 #supplementary-controls{
     display: flex;
@@ -311,6 +325,7 @@ figcaption{
     width: 80%;
     margin-top: 50px;
     margin-left: 200px;
+    cursor:pointer;
 }
 
 #seek-bar-container{
@@ -350,13 +365,56 @@ figcaption{
     border:none;
 }
 
-@media only screen and(max-width: 700px) {
+@media only screen and (max-width: 1250px) {
     
+
+    .nav-button{
+        height: 15px;
+        width: 15px;
+    }
+
+#album-gallery > .row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+#album-gallery > .row > figure > img {
+    height: 150px;
+    width: 150px;
+}
+
+#album-gallery > .row > figure{
+    height: 150px;
+    width: 150px;
+}
+
 .control-button{
-    height: 20px;
-    width: 20px;
+    height: 24px;
+    width: 24px;
  
 }
+
+@media only screen and (max-width: 1100px) {
+    
+    .nav-button{
+        height: 10px;
+        width: 10px;
+    }
+    
+    #album-gallery > .row > figure > img {
+        height: 100px;
+        width: 100px;
+    }
+    
+    #album-gallery > .row > figure{
+        height: 100px;
+        width: 100px;
+    }
+    
+    .control-button{
+        height: 20px;
+        width: 20px;
+     
+    }
 
 
 #control-panel-wrapper{
@@ -368,6 +426,10 @@ figcaption{
     height: fit-content;
     align-items: center;
   
+}
+
+#seek-bar-container{
+    width: 100%;
 }
 
 }
