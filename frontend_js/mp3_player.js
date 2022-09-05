@@ -1,5 +1,7 @@
- const setNowPlayingArt = async (path) =>{
-  document.getElementById('now-playing-img').src = await window.electronAPI.loadArt(path);
+ const setNowPlayingArtAndTitle = async (path) =>{
+  let artAndTitle = await window.electronAPI.loadArt(path);
+  document.getElementById('now-playing-img').src = artAndTitle.picture;
+  document.getElementById('now-playing-title').innerText = artAndTitle.songTitle; 
 }
 
 
@@ -80,7 +82,9 @@ let currentTimeLeft = document.getElementById("now-playing-time-left");
   playButton.removeEventListener('click', playMp3);
   playButton.addEventListener('click', pauseMp3);
   playButton.style.backgroundImage = "url('./resources/svg/media/az-pause.svg')"; //toggle display to pause button 
-  setNowPlayingArt(path);
+
+  //update the now playing song title and album
+  setNowPlayingArtAndTitle(path);
   };
 
 
@@ -107,6 +111,7 @@ let playNextSong = () => {
   audio.setAttribute('src', songQueue[0]); //set the current song to the song at the front of the queue
   audio.load(); //load new song so that it doesn't play the old song.
   playMp3(); //start playing the current song
+  setNowPlayingArtAndTitle(songQueue[0]); //and switch to display the new song playing.
   //clear the queue
   while (uiQueue.firstChild) { // TODO: save the first child maybe add it back after it is deleted
     uiQueue.removeChild(uiQueue.lastChild);
@@ -124,6 +129,7 @@ let playPreviousSong = () =>{
   audio.setAttribute('src', songQueue[0]); //set the current song to the song at the front of the queue
   audio.load(); //load new song so that it doesn't play the old song.
   playMp3(); //start playing the current song
+  setNowPlayingArtAndTitle(songQueue[0]); //and switch to display the new song playing.
   //clear the queue
   while (uiQueue.firstChild) {
     uiQueue.removeChild(uiQueue.lastChild);
