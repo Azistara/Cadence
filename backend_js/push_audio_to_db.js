@@ -19,7 +19,7 @@ let addAudioFileToDB = async (audioPath) =>{ //adds a file's metadata and absolu
 
     //get the metadata from the audioPath
     let metadata = await getMetadata(audioPath);
-
+    
     if( (metadata?.format?.duration <= 5) ){return;} //this file is less than 5 seconds long and we will not add it to the database
        
     else{ //insert the song as a row into the AllSongs table
@@ -28,7 +28,7 @@ let addAudioFileToDB = async (audioPath) =>{ //adds a file's metadata and absolu
         let SongTitle = metadata?.common?.title  || metadata?.format?.title || metadata?.native?.title || audioPath;
         let Artist =  metadata?.common?.artist || metadata?.format?.artist || metadata?.native?.artist || 'unknown artist';
         let Album = metadata?.common?.album || metadata?.format?.album || metadata?.native?.album ||  'unknown album';
-        let AlbumArt  = metadata?.common?.picture || 'default photo'; //TODO get the path to this photo from zuriel
+        let AlbumArt  = metadata?.common?.picture || 'default photo'; //TODO get this path from Zuriel
         let AlbumArtist = metadata?.common?.albumartist || 'unknown album artist';
         let Genre = metadata?.common?.genre || 'unknown genre';
         let Year = metadata?.common?.year || -1;
