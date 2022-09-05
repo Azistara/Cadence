@@ -503,11 +503,14 @@ figcaption{
 }
 
 .individual-song{
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
     margin-bottom: 10px;
     width: inherit;
     height: fit-content;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: darkslategrey;
 }
 
