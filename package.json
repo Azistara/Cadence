@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "album-art": "^2.0.2",
     "electron": "^19.0.8",
     "electron-acrylic-window": "^0.5.11",
     "music-metadata": "^7.12.5",
