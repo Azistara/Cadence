@@ -1,4 +1,6 @@
-//play mp3s
+ const setNowPlayingArt = async (path) =>{
+  document.getElementById('now-playing-img').src = await window.electronAPI.loadArt(path);
+}
 
 
 
@@ -78,7 +80,7 @@ let currentTimeLeft = document.getElementById("now-playing-time-left");
   playButton.removeEventListener('click', playMp3);
   playButton.addEventListener('click', pauseMp3);
   playButton.style.backgroundImage = "url('./resources/svg/media/az-pause.svg')"; //toggle display to pause button 
-  
+  setNowPlayingArt(path);
   };
 
 
@@ -191,13 +193,7 @@ queueItem.id = "queue-item-" + index;
   temp.preload = "metadata";
   temp.onloadedmetadata = function() {
     durationInSeconds = temp.duration;
-    durationInMinutes = (Math.floor(durationInSeconds / 60));
-    durationInSeconds = (Math.floor(durationInSeconds - (durationInMinutes*60))).toString();
-    totalDuration = durationInMinutes.toString() + ":" + durationInSeconds.toString();
-    if(durationInSeconds === '0'){
-      totalDuration += '0';
-    }
-    const node2 = document.createTextNode(totalDuration);
+    const node2 = document.createTextNode(formatDuration(durationInSeconds));
     songDuration.appendChild(node2);
 };
 
