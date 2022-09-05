@@ -21,12 +21,16 @@ const getCoverArtURL = async (path) => {
   // query the database and select the albumArt
   let response = null;
   try {
+    let pictureURL = undefined;
     response = await query(path);
     response = response.map((v) => Object.assign({}, v)); //convert each row in result to a js object and put them in an array called response
-    console.log("artist:" + response[0].artist, response[0].album );
-   
-   let pictureURL = await albumArt( response[0].artist);
-   //let pictureURL = await albumArt( response[0].artist, {album: response[1]} );
+    
+   if(response[0].album == "unknown artist"){
+    pictureURL = await albumArt( response[0].artist);
+   }
+   else{
+   pictureURL = await albumArt( response[0].artist, {album: response[0].album} );
+   }
    return {picture: pictureURL, songTitle: response[0].title};
 
   } catch (error) {
