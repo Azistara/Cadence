@@ -3,6 +3,7 @@
 
 //import modules
 const {BrowserWindow} = require("electron-acrylic-window");
+//const {BrowserWindow} = require("electron");
 const { setVibrancy } = require('electron-acrylic-window');
 const { app, ipcMain } = require('electron');
 const os = require ('os');
@@ -13,6 +14,7 @@ const {getMetadata} = require("./backend_js/get_file_metadata");
 const {handleLoadAllSongs} = require('./backend_js/handleLoadAllSongs.js');
 const {handleSearch} = require("./backend_js/handle_search");
 const path = require('path');
+const { getCoverArtURL } = require("./backend_js/handle_load_art.js");
 
 // window acrylic options object
 op = {
@@ -38,7 +40,7 @@ const createWindow = () => {
     minHeight: 500,
     minWidth: 500,
   })
-  setVibrancy(win, op); 
+  setVibrancy(win, op); //TODO: decide what to do with vibrancy
   win.loadFile('index.html');
   //win.removeMenu();  TODO: add this back after project is complete
 }
@@ -47,6 +49,7 @@ app.whenReady().then(() => {
   setupDatabase();  //setup the mysql database
   ipcMain.handle('load-all-songs', handleLoadAllSongs); //listen for user switching to the all songs page
   ipcMain.handle('search-all-songs', async (event, searchTerm) => { const result = await handleSearch(searchTerm); return result;}); //listen for user searching all songs
+  ipcMain.handle('load-art', async (event, path) => {const result = await getCoverArtURL(path); return result;} ); //listen for requests for music art
   createWindow(); //creates a renderer process
  
   
