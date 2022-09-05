@@ -1,7 +1,13 @@
  const setNowPlayingArtAndTitle = async (path) =>{
   let artAndTitle = await window.electronAPI.loadArt(path);
+  let title = artAndTitle.songTitle;
+  if(title.length > 37){
+    title = title.substring(0, 37);
+    title += "...";
+  }
   document.getElementById('now-playing-img').src = artAndTitle.picture;
-  document.getElementById('now-playing-title').innerText = artAndTitle.songTitle; 
+  document.getElementById('now-playing-title').innerText = title; 
+  pushToRecentlyPlayed(artAndTitle.picture, artAndTitle.songTitle, path);
 }
 
 
@@ -248,7 +254,7 @@ let toggleSearchBar = () =>{
 };
 searchButton.addEventListener('click', toggleSearchBar);
 
-let enterFullScreen = () =>{  //from: https://www.w3schools.com/howto/howto_js_fullscreen.asp
+let enterFullScreen = () =>{  //from: https://www.w3schools.com/howto/howto_js_fullscreen.asp TODO: FIX
   let elem = document.documentElement;
 if (elem.requestFullscreen) {
   elem.requestFullscreen();
@@ -259,4 +265,41 @@ if (elem.requestFullscreen) {
 }
 };
 fullScreenButton.addEventListener('click', enterFullScreen);
+
+const pushToRecentlyPlayed = (art, title, path) =>{ //shifts all recently played figures to the left and sticks the now playing song in the first spot
+  if(title.length > 37){
+    title = title.substring(0, 37);
+    title += "...";
+  }
+ let recent1 =  document.querySelector("#recent4");
+ let caption1 = document.querySelector("#recent-caption4");
+
+ let recent2 =  document.querySelector("#recent3");
+ let caption2 = document.querySelector("#recent-caption3");
+
+ let recent3 =  document.querySelector("#recent2");
+ let caption3 = document.querySelector("#recent-caption2");
+
+ let recent4 =  document.querySelector("#recent1");
+ let caption4 = document.querySelector("#recent-caption1");
+
+ recent4.src = recent3.src;
+ recent4.value = recent3.value;
+
+ recent3.src = recent2.src;
+ recent3.value = recent2.value;
+
+ recent2.src = recent1.src;
+ recent2.value = recent1.value;
+ 
+ recent1.src = art;
+ recent1.value = path;
+
+ caption4.innerText = caption3.innerText;
+ caption3.innerText = caption2.innerText;
+ caption2.innerText = caption1.innerText;
+ caption1.innerText = title;
+
+}
+
  
