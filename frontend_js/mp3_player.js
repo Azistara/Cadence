@@ -35,6 +35,18 @@ let searchBar     =    document.getElementById('search-bar');
 let fullScreenButton = document.getElementById('full-screen-button');
 let currentPlayTime = document.getElementById("now-playing-timestamp");
 let currentTimeLeft = document.getElementById("now-playing-time-left");
+let recent1 =  document.querySelector("#recent4");
+let caption1 = document.querySelector("#recent-caption4");
+
+let recent2 =  document.querySelector("#recent3");
+let caption2 = document.querySelector("#recent-caption3");
+
+let recent3 =  document.querySelector("#recent2");
+let caption3 = document.querySelector("#recent-caption2");
+
+let recent4 =  document.querySelector("#recent1");
+let caption4 = document.querySelector("#recent-caption1");
+
 //START CONTROL PANEL BUTTONS
 
  let playMp3 = (path) => {
@@ -175,6 +187,10 @@ volumeButton.addEventListener('click', toggleVolumeSlider);
 
 volumeSlider.oninput = function() {audio.volume =  (volumeSlider.value / 100); };
 
+recent1.addEventListener("click", (event) => {playMp3(event.target.value);});
+recent2.addEventListener("click", (event) => {playMp3(event.target.value);});
+recent3.addEventListener("click", (event) => {playMp3(event.target.value);});
+recent4.addEventListener("click", (event) => {playMp3(event.target.value);});
 
 
 //END CONTROL PANEL BUTTONS
@@ -271,17 +287,7 @@ const pushToRecentlyPlayed = (art, title, path) =>{ //shifts all recently played
     title = title.substring(0, 37);
     title += "...";
   }
- let recent1 =  document.querySelector("#recent4");
- let caption1 = document.querySelector("#recent-caption4");
 
- let recent2 =  document.querySelector("#recent3");
- let caption2 = document.querySelector("#recent-caption3");
-
- let recent3 =  document.querySelector("#recent2");
- let caption3 = document.querySelector("#recent-caption2");
-
- let recent4 =  document.querySelector("#recent1");
- let caption4 = document.querySelector("#recent-caption1");
 
  recent4.src = recent3.src;
  recent4.value = recent3.value;
