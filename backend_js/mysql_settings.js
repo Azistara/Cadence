@@ -3,7 +3,7 @@
 let mysqlSettings = {
     host     : 'localhost',
     user     : 'root',
-    password : 'CleveM3bby!'
+    password : ''
 };
 
 
